@@ -1,217 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Enrique Castillo & Asociados — cozfc.cl</title>
-  <meta name="description" content="Asesoría estratégica en gestión contable, legal, laboral y tecnológica. Enrique Castillo & Asociados: soluciones integradas para tu crecimiento con rigurosidad fiscal y automatización 24/7." />
-  <meta name="keywords" content="contabilidad, asesoría legal, gestión laboral, automatización, PCGA, NIIF, US GAAP, Chile" />
-  <meta property="og:title" content="Enrique Castillo & Asociados — Tu aliado en gestión integral" />
-  <meta property="og:description" content="Ecosistema de soluciones integradas para contabilidad, legal y tecnología." />
-  <meta property="og:image" content="https://mabui-labs.github.io/cozfc-landing/assets/Logo_ECA.jpg" />
-  <meta property="og:url" content="https://mabui-labs.github.io/cozfc-landing/" />
+  <title>Enrique Castillo & Asociados — Consultoría de Alto Impacto</title>
+  <meta name="description" content="Ecosistema de gestión administrativa, contable, legal y tecnológica. Enrique Castillo & Asociados." />
 
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header container" role="banner">
-    <a class="brand" href="#" aria-label="Enrique Castillo & Asociados">
-      <img class="brand__logo brand__logo--xl" src="assets/Logo_ECA.jpg" alt="Logo de Enrique Castillo & Asociados" loading="lazy">
-      <div class="brand__text">
-        <div class="brand__title">Enrique Castillo & Asociados</div>
-        <div class="brand__subtitle">Consultoría de alto impacto</div>
-      </div>
-    </a>
 
-    <nav class="nav" role="navigation" aria-label="Navegación principal">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo & Asociados" class="brand__logo">
+      <div class="brand__text">
+        <span class="brand__title">Enrique Castillo & Asociados</span>
+        <span class="brand__subtitle">Consultoría de Alto Impacto</span>
+      </div>
+    </div>
+
+    <nav class="site-nav">
       <a href="#ecosistema">Ecosistema</a>
-      <a href="#servicios">Servicios</a>
-      <a class="btn btn--ghost btn--small" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn btn--small" href="#contacto">Contacto</a>
+      <a href="#perfil">Perfil</a>
+      <a class="btn btn--primary" href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero container" aria-labelledby="hero-title">
-    <div class="hero__text">
-      <h1 id="hero-title">Tu Aliado Estratégico en<br>Gestión Contable, Legal y<br>Tecnología</h1>
-      <p class="lead">
-        Potenciamos tu operación con rigurosidad fiscal, gestión laboral y automatización inteligente. Un socio disponible 24/7 para tus incidentes críticos.
-      </p>
-      <div class="actions">
-        <a class="btn" href="#servicios">Explorar Servicios</a>
-        <a class="btn btn--ghost" href="#ecosistema">Nuestro Ecosistema</a>
-      </div>
-    </div>
+  <main>
+    <!-- ECOSISTEMA (ARRIBA) -->
+    <section id="ecosistema" class="section section--ecosystem">
+      <div class="container">
+        <h2 class="section__title">Nuestro Ecosistema de Gestión</h2>
+        <p class="section__subtitle">
+          Capacidades clave orbitando sobre un centro de gobierno único, para darte una visión 360°.
+        </p>
 
-    <figure class="hero__media card" aria-hidden="true">
-      <img class="hero__photo" src="assets/Foto_Enrique.JPG" alt="Retrato de Enrique Castillo" loading="lazy">
-    </figure>
-  </section>
+        <div class="ecosystem">
+          <!-- Anillos -->
+          <div class="ring ring--outer"></div>
+          <div class="ring ring--middle"></div>
+          <div class="ring ring--inner"></div>
 
-  <!-- Marca destacada -->
-  <section class="marca container" aria-labelledby="marca-title">
-    <div class="marca__panel card">
-      <img class="marca__logo" src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo & Asociados" loading="lazy">
-      <div class="marca__copy">
-        <h3 id="marca-title">Enrique Castillo & Asociados</h3>
-        <p>Asesoría en gestión administrativa y contable, con alcance legal, laboral y tecnológico.</p>
-        <div class="actions">
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">Ver perfil en LinkedIn</a>
+          <!-- Centro -->
+          <div class="ecosystem__center">
+            <img src="assets/Logo_ECA.jpg" alt="Enrique Castillo & Asociados" />
+          </div>
+
+          <!-- Chips posicionados (sin animaciones para máxima estabilidad) -->
+          <div class="chip chip--top">Contabilidad & Fiscal</div>
+          <div class="chip chip--top-right">Gestión Legal</div>
+          <div class="chip chip--right">Gestión Administrativa</div>
+          <div class="chip chip--bottom-right">Comercial & Pagos</div>
+          <div class="chip chip--bottom">Informática & N8N</div>
+          <div class="chip chip--left">Laboral & Previred</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Ecosistema -->
-  <section id="ecosistema" class="ecosistema container" aria-labelledby="ecosistema-title">
-    <h2 id="ecosistema-title">Un Ecosistema de Soluciones Integradas</h2>
-    <p class="section-intro">
-      Seis capacidades clave orbitando un centro de gobierno único para darte una visión 360°.
-    </p>
+    <!-- PERFIL (DEBAJO DEL ECOSISTEMA) -->
+    <section id="perfil" class="section section--profile">
+      <div class="container">
+        <div class="profile-grid">
+          <div class="profile-grid__item">
+            <div class="card equal-media">
+              <img src="assets/Foto_Enrique.JPG" alt="Retrato de Enrique Castillo" />
+            </div>
+          </div>
 
-    <div class="orbit-container">
-      <div class="orbit">
-        <div class="orbit__center">
-          <img src="assets/Logo_ECA.jpg" alt="Centro: Enrique Castillo & Asociados" loading="lazy">
+          <div class="profile-grid__item">
+            <div class="card equal-media">
+              <img src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo & Asociados" />
+            </div>
+          </div>
         </div>
 
-        <!-- Anillos -->
-        <div class="orbit__ring orbit__ring--outer"></div>
-        <div class="orbit__ring orbit__ring--inner"></div>
+        <div class="profile-info">
+          <h3 class="profile-info__title">Enrique Castillo — MBA / Contador Auditor</h3>
+          <p class="profile-info__text">
+            Profesional con experiencia en contabilidad, trabajando en entornos globales y cumpliendo normativas contables.
+            Especializado en PCGA, NIIF y USGAAP. Con conocimiento en industrias gastronómica, ingeniería–construcción, sector médico,
+            e importación y exportación marítima y aérea.
+          </p>
+          <p class="profile-info__text">
+            Como Asesor, me dedico a ayudar a las empresas a lograr un crecimiento integral y mejorar su gestión de negocios. Cuento con
+            una amplia formación, incluyendo un MBA en Negocios Internacionales, un título de Contador Auditor, y cursos en finanzas,
+            recursos humanos, manejo de software empresariales (SAP) y normas internacionales de contabilidad. Adscrito al Colegio
+            de Contadores de Chile y en actualización constante mediante cursos y certificaciones.
+          </p>
+          <p class="profile-info__text">
+            Actualmente mantengo una cartera de 30–50 clientes que cuentan con la asistencia del Ecosistema de Enrique Castillo & Asociados.
+          </p>
 
-        <!-- Satélites -->
-        <div class="satellite" data-angle="0"><span>Contabilidad & Fiscal</span></div>
-        <div class="satellite" data-angle="60"><span>Gestión Legal</span></div>
-        <div class="satellite" data-angle="120"><span>Gestión Administrativa</span></div>
-        <div class="satellite" data-angle="180"><span>Comercial & Pagos</span></div>
-        <div class="satellite" data-angle="240"><span>Informática & N8N</span></div>
-        <div class="satellite" data-angle="300"><span>Laboral & Previred</span></div>
-      </div>
-    </div>
-
-    <div class="ecosistema__footnote">
-      Ecosistema impulsado junto a
-      <a href="https://mabui.cl" target="_blank" rel="noopener">mabui.cl</a>
-      <img class="ecosistema__mabui" src="assets/Logo_MB.jpg" alt="Mabui" loading="lazy"> <!-- Asumí Logo_MB.jpg basado en captura; ajusta si es Logo_MBK.jpg -->
-    </div>
-  </section>
-
-  <!-- Sobre Enrique -->
-  <section id="sobre" class="sobre container" aria-labelledby="sobre-title">
-    <div class="sobre__grid card">
-      <div class="sobre__text">
-        <h2 id="sobre-title">Sobre Enrique</h2>
-        <p>
-          Profesional en contabilidad con experiencia en entornos globales y cumplimiento de normativas, especializado en <strong>PCGA, NIIF y US GAAP</strong>. Ha trabajado en industrias como gastronómica, ingeniería-construcción, sector médico, e importación/exportación marítima y aérea.
-        </p>
-        <p>
-          Como asesor, impulsa el crecimiento integral de empresas. Cuenta con <strong>MBA en Negocios Internacionales</strong>, título de <strong>Contador Auditor</strong>, y expertise en finanzas, RRHH, software (ej. SAP) y normas contables internacionales.
-        </p>
-        <p>
-          Miembro del <strong>Colegio de Contadores de Chile</strong>, se actualiza constantemente. Administra una cartera de <strong>30–50 clientes</strong> con el ecosistema de Enrique Castillo & Asociados.
-        </p>
-        <div class="actions">
-          <a class="btn" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">Conectar en LinkedIn</a>
+          <div class="profile-info__cta">
+            <a class="btn btn--outline" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">
+              Ver mi LinkedIn
+            </a>
+          </div>
         </div>
       </div>
-      <div class="sobre__logo">
-        <img src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo & Asociados" loading="lazy">
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section--contact">
+      <div class="container">
+        <h2 class="section__title">Contacto</h2>
+        <p class="section__subtitle">
+          Escríbenos para evaluar tu caso y planificar una implementación segura.
+        </p>
+        <div class="contact-cta">
+          <a class="btn btn--primary" href="mailto:ecastillo@cozfc.cl">ecastillo@cozfc.cl</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Enrique Castillo & Asociados</span>
+      <a class="madeby" href="https://mabui.cl" target="_blank" rel="noopener">Tecnología by Mabui</a>
     </div>
-  </section>
-
-  <!-- Servicios -->
-  <section id="servicios" class="servicios container" aria-labelledby="servicios-title">
-    <h2 id="servicios-title">Prestaciones</h2>
-
-    <div class="grid">
-      <article class="svc card">
-        <h3>Gestión Contable y Fiscal</h3>
-        <ul>
-          <li>Contabilidad Tributaria (balance tributario)</li>
-          <li>Formulario 29 IVA (confección, rectificativas, pagos)</li>
-          <li>Facturación Edenred–Junaeb / clientes</li>
-          <li>Portal SII (modificaciones, peticiones admin)</li>
-        </ul>
-      </article>
-
-      <article class="svc card">
-        <h3>Gestión Comercial</h3>
-        <ul>
-          <li>Apertura de cocinas Marketplace, soporte online</li>
-          <li>Comisiones, promociones y documentos de pago</li>
-          <li>Soporte medios de pago (Getnet, Klapp, otros)</li>
-          <li>Integración Edenred/Sodexo y otros</li>
-        </ul>
-      </article>
-
-      <article class="svc card">
-        <h3>Gestión Administrativa</h3>
-        <ul>
-          <li>Patentes, traspasos, pagos y fiscalizaciones</li>
-          <li>Seremi Salud y certificaciones</li>
-          <li>INAPI y revisión de contratos</li>
-          <li>Reportes, costos y actualizaciones 24/7</li>
-        </ul>
-      </article>
-
-      <article class="svc card">
-        <h3>Gestión Legal Societaria</h3>
-        <ul>
-          <li>Actas de asamblea y modificaciones</li>
-          <li>Registro y actualización de socios (RES)</li>
-          <li>Elaboración de documentos societarios</li>
-          <li>Constitución y transformación de empresas</li>
-        </ul>
-      </article>
-
-      <article class="svc card">
-        <h3>Gestión Informática</h3>
-        <ul>
-          <li>Implementación de software a medida</li>
-          <li>Capacitación y puesta en marcha</li>
-          <li>Automatización de procesos web (N8N)</li>
-          <li>Soporte técnico y mantenimiento</li>
-        </ul>
-      </article>
-
-      <article class="svc card">
-        <h3>Gestión Laboral</h3>
-        <ul>
-          <li>Cálculo de liquidaciones y pago Previred</li>
-          <li>Emisión de recibos de sueldo y vacaciones</li>
-          <li>Libro electrónico DT y control de asistencia</li>
-          <li>Contratos, anexos y finiquitos</li>
-        </ul>
-      </article>
-    </div>
-
-    <aside class="sell">
-      <img class="badge" src="assets/Logo_Colegio_de_Contadores.jpg" alt="Colegio de Contadores de Chile" loading="lazy">
-      <p>Miembro activo del Colegio de Contadores de Chile. Compromiso y ética profesional.</p>
-    </aside>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="contacto container" aria-labelledby="contacto-title">
-    <h2 id="contacto-title">¿Listo para optimizar tu gestión?</h2>
-    <p>Conversemos. Escríbenos para evaluar tu caso y diseñar un plan de implementación a tu medida.</p>
-    <div class="actions">
-      <a class="btn" href="mailto:ecastillo@cozfc.cl">ecastillo@cozfc.cl</a>
-      <a class="btn btn--ghost" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer container" role="contentinfo">
-    <small>© <span id="year"></span> Enrique Castillo & Asociados — cozfc.cl</small>
   </footer>
 
   <script src="script.js"></script>
