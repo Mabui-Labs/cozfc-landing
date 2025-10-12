@@ -1,182 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Enrique Castillo & Asociados — cozfc.cl</title>
-    <meta name="description" content="Consultoría contable, fiscal, laboral, legal y automatización de alto impacto. Enrique Castillo & Asociados." />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enrique Castillo & Asociados — cozfc.cl</title>
+  <meta name="description" content="Consultoría contable, fiscal, legal, laboral y automatización de alto impacto. Enrique Castillo & Asociados (cozfc.cl)." />
 
-    <!-- Tipografías profesionales -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Tipografías profesionales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="site-header container">
-      <div class="brand">
-        <img src="assets/Logo_ECA.jpg" alt="Enrique Castillo & Asociados" class="brand-mark" />
-        <div class="brand-copy">
-          <h1>Enrique Castillo & Asociados</h1>
-          <p class="sub">Consultoría de alto impacto</p>
-        </div>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header container">
+    <div class="brand">
+      <img class="brand__logo" src="assets/Logo_ECA.jpg" alt="Enrique Castillo & Asociados" />
+      <div class="brand__text">
+        <div class="brand__title">Enrique Castillo & Asociados</div>
+        <div class="brand__subtitle">Consultoría de alto impacto</div>
       </div>
+    </div>
 
-      <nav class="site-nav">
-        <a href="#ecosistema">Ecosistema</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto" class="btn btn-sm">Contacto</a>
-      </nav>
-    </header>
+    <nav class="nav">
+      <a href="#ecosistema">Ecosistema</a>
+      <a href="#servicios">Servicios</a>
+      <a class="btn btn--small" href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-    <!-- Hero -->
-    <section class="hero container">
-      <div class="hero-copy">
-        <h2 class="display">Excelencia contable, legal y tecnológica para operar y crecer con seguridad</h2>
-        <p class="lead">
-          Acompañamos tu operación con rigurosidad fiscal, gestión laboral y
-          automatización de procesos. Un socio estratégico con enfoque
-          ejecutivo, disponible 24/7 para incidentes críticos.
-        </p>
-        <div class="hero-ctas">
-          <a class="btn" href="#servicios">Ver servicios</a>
-          <a class="btn btn-alt" href="https://mabui.cl" target="_blank" rel="noopener">Ecosistema Mabui</a>
-        </div>
-      </div>
-
-      <div class="hero-media">
-        <div class="photo-wrap">
-          <img src="assets/Foto_Enrique.JPG" alt="Enrique Castillo" class="photo" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Ecosistema -->
-    <section id="ecosistema" class="ecosistema container">
-      <h3 class="section-title">Nuestro Ecosistema</h3>
-      <p class="section-sub">
-        Seis capacidades clave orbitando sobre un centro de gobierno único.
+  <!-- Hero -->
+  <section class="hero container">
+    <div class="hero__text">
+      <h1>
+        Excelencia contable, legal y<br />
+        tecnológica para operar y crecer<br />
+        con seguridad
+      </h1>
+      <p class="lead">
+        Acompañamos tu operación con rigurosidad fiscal, gestión laboral y automatización de procesos.
+        Un socio estratégico con enfoque ejecutivo, disponible 24/7 para incidentes críticos.
       </p>
+      <div class="actions">
+        <a class="btn" href="#servicios">Ver servicios</a>
+        <a class="btn btn--ghost" href="#ecosistema">Ecosistema Mabui</a>
+      </div>
+    </div>
 
-      <div class="orbit">
-        <!-- Centro -->
-        <div class="core">
-          <img src="assets/Logo_ECA.jpg" alt="ECA" />
-        </div>
+    <div class="hero__media card">
+      <img class="hero__photo" src="assets/Foto_Enrique.JPG" alt="Enrique Castillo" />
+    </div>
+  </section>
 
-        <!-- Anillo/Orbita con items -->
-        <div class="ring ring-1">
-          <a class="orb" href="#servicios" data-label="Contable & Fiscal">Contable<br>& Fiscal</a>
-          <a class="orb" href="#servicios" data-label="Administrativa">Administrativa</a>
-          <a class="orb" href="#servicios" data-label="Comercial">Comercial</a>
-          <a class="orb" href="#servicios" data-label="Legal">Legal</a>
-          <a class="orb" href="#servicios" data-label="Informática">Informática</a>
-          <a class="orb" href="#servicios" data-label="Laboral">Laboral</a>
-        </div>
+  <!-- Ecosistema con órbitas -->
+  <section id="ecosistema" class="ecosistema container">
+    <h2>Nuestro Ecosistema</h2>
+    <p class="section-intro">
+      Seis capacidades clave orbitando sobre un centro de gobierno único.
+    </p>
+
+    <div class="orbit">
+      <div class="orbit__center">
+        <img src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo & Asociados" />
       </div>
 
-      <div class="ecosistema-badges">
-        <img src="assets/Logo_Colegio_de_Contadores.jpg" alt="Colegio de Contadores de Chile" title="Colegio de Contadores de Chile" />
-        <img src="assets/Logo_MBK.jpg" alt="Mabui Network" title="Mabui Network" />
-      </div>
-    </section>
+      <!-- Anillos -->
+      <div class="orbit__ring orbit__ring--outer"></div>
+      <div class="orbit__ring orbit__ring--inner"></div>
 
-    <!-- Servicios -->
-    <section id="servicios" class="servicios container">
-      <h3 class="section-title">Prestaciones & Cobertura</h3>
+      <!-- Satélites -->
+      <div class="satellite sat--1"><span>Contabilidad & Fiscal</span></div>
+      <div class="satellite sat--2"><span>Gestión Legal</span></div>
+      <div class="satellite sat--3"><span>Gestión Administrativa</span></div>
+      <div class="satellite sat--4"><span>Comercial & Pagos</span></div>
+      <div class="satellite sat--5"><span>Informática & N8N</span></div>
+      <div class="satellite sat--6"><span>Laboral & Previred</span></div>
+    </div>
 
-      <div class="grid">
-        <article class="card">
-          <h4>Gestión Contable y Fiscal</h4>
-          <ul>
-            <li>Contabilidad Tributaria (balance tributario)</li>
-            <li>Formulario 29 IVA (confección, rectificativas, pagos)</li>
-            <li>Facturación Edenred–Junaeb / clientes</li>
-            <li>Portal SII (modificaciones, peticiones admin)</li>
-          </ul>
-        </article>
+    <div class="ecosistema__footnote">
+      Ecosistema impulsado junto a <a href="https://mabui.cl" target="_blank" rel="noopener">mabui.cl</a>
+      <img class="ecosistema__mabui" src="assets/Logo_MBK.jpg" alt="Mabui" />
+    </div>
+  </section>
 
-        <article class="card">
-          <h4>Gestión Administrativa</h4>
-          <ul>
-            <li>Trámites Municipales (patentes, traspasos, pagos, fiscalizaciones)</li>
-            <li>Seremi Salud (resoluciones sanitarias, certificaciones)</li>
-            <li>INAPI (registro de marcas)</li>
-            <li>Revisión de contratos (arriendos, legales y comerciales)</li>
-            <li>Configuración de reportes, costos y actualizaciones</li>
-            <li>Trámites bancarios (aperturas, créditos, solicitudes)</li>
-          </ul>
-        </article>
+  <!-- Servicios -->
+  <section id="servicios" class="servicios container">
+    <h2>Prestaciones</h2>
 
-        <article class="card">
-          <h4>Gestión Comercial</h4>
-          <ul>
-            <li>Apertura en marketplaces, soporte online</li>
-            <li>Negociación de comisiones, promociones y dctos</li>
-            <li>Contratación y soporte (Getnet, Klapp, otros)</li>
-            <li>Edenred/Sodhexo/Otros</li>
-          </ul>
-        </article>
+    <div class="grid">
+      <article class="svc">
+        <h3>Gestión Contable y Fiscal</h3>
+        <ul>
+          <li>Contabilidad Tributaria (balance tributario)</li>
+          <li>Formulario 29 IVA (confección, rectificativas, pagos)</li>
+          <li>Facturación Edenred–Junaeb / clientes</li>
+          <li>Portal SII (modificaciones, peticiones admin)</li>
+        </ul>
+      </article>
 
-        <article class="card">
-          <h4>Gestión Legal</h4>
-          <ul>
-            <li>Actas de asamblea (constitución, modificación, transformación)</li>
-            <li>Registro y actualizaciones RES (libro de accionistas)</li>
-            <li>Elaboración de documentos (ventas panteses, arriendos, acciones)</li>
-          </ul>
-        </article>
+      <article class="svc">
+        <h3>Gestión Comercial</h3>
+        <ul>
+          <li>Apertura de cocinas Marketplace, soporte online</li>
+          <li>Comisiones, promociones y documentos de pago</li>
+          <li>Soporte medios de pago (Getnet, Klapp, otros)</li>
+          <li>Integración Edenred/Sodhexo y otros</li>
+        </ul>
+      </article>
 
-        <article class="card">
-          <h4>Gestión Informática</h4>
-          <ul>
-            <li>Configuración, carga e implementación de software</li>
-            <li>Manuales, capacitación y puesta en marcha</li>
-            <li>Automatización web con N8N</li>
-          </ul>
-        </article>
+      <article class="svc">
+        <h3>Gestión Administrativa</h3>
+        <ul>
+          <li>Trámites Municipales (patentes, traspasos, pagos, fiscalizaciones)</li>
+          <li>Seremi Salud (resoluciones sanitarias, certificados, fiscalizaciones)</li>
+          <li>INAPI (registro de marcas)</li>
+          <li>Contratos, reportes y actualizaciones</li>
+        </ul>
+      </article>
 
-        <article class="card">
-          <h4>Gestión Laboral</h4>
-          <p class="muted">(Hasta 15.000 CLP por empleado)</p>
-          <ul>
-            <li>Cálculo y pago Previred (liquidaciones)</li>
-            <li>Recibos de sueldo y vacaciones</li>
-            <li>LRE registro electrónico (Dirección del Trabajo)</li>
-            <li>Libro de asistencia (apertura y llenado)</li>
-            <li>Contratos, modificaciones, cartas & certificados</li>
-            <li>Comunicaciones (despidos, amonestaciones, etc.)</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+      <article class="svc">
+        <h3>Gestión Legal</h3>
+        <ul>
+          <li>Actas de asamblea (constitución, modificación, transformación)</li>
+          <li>Registro y actualización RES</li>
+          <li>Elaboración de documentos societarios</li>
+        </ul>
+      </article>
 
-    <!-- CTA -->
-    <section id="contacto" class="cta container">
-      <div class="cta-box">
-        <h3>¿Listo para operar con excelencia?</h3>
-        <p>Conversemos  — enfocamos, ejecutamos y medimos. 24/7 para incidentes críticos.</p>
-        <div class="cta-actions">
-          <a class="btn" href="mailto:ecastillo@cozfc.cl">ecastillo@cozfc.cl</a>
-          <a class="btn btn-alt" href="https://mabui.cl" target="_blank" rel="noopener">Ver ecosistema Mabui</a>
-        </div>
-      </div>
-    </section>
+      <article class="svc">
+        <h3>Gestión Informática</h3>
+        <ul>
+          <li>Configuración e implementación de software</li>
+          <li>Capacitaciones, manuales y puesta en marcha</li>
+          <li>Automatización web con N8N</li>
+        </ul>
+      </article>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <p>© <span id="year"></span> Enrique Castillo & Asociados. Todos los derechos reservados.</p>
-        <nav class="footer-nav">
-          <a href="#ecosistema">Ecosistema</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-      </div>
-    </footer>
+      <article class="svc">
+        <h3>Laboral</h3>
+        <ul>
+          <li>Cálculo de sueldos y pago Previred</li>
+          <li>Recibos de sueldo y vacaciones</li>
+          <li>Libro electrónico DT, asistencia y comunicaciones</li>
+        </ul>
+      </article>
+    </div>
 
-    <script src="script.js"></script>
-  </body>
+    <div class="sell">
+      <img class="badge" src="assets/Logo_Colegio_de_Contadores.jpg" alt="Colegio de Contadores de Chile" />
+      <p>Miembro del Colegio de Contadores de Chile.</p>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contacto container">
+    <h2>Contacto</h2>
+    <p>Escríbenos para evaluar tus necesidades y diseñar tu plan de implementación.</p>
+    <a class="btn" href="mailto:ecastillo@cozfc.cl">ecastillo@cozfc.cl</a>
+  </section>
+
+  <footer class="site-footer container">
+    <small>© <span id="y"></span> Enrique Castillo &amp; Asociados — cozfc.cl</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
