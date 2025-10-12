@@ -1,13 +1,30 @@
-// Año dinámico en el footer
-document.getElementById('year').textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
 
-// Scroll suave para anclas internas
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    if (id && id.length > 1) {
-      e.preventDefault();
-      document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  // 1. Actualiza el año en el footer
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  // 2. Animación de entrada para secciones al hacer scroll
+  const sections = document.querySelectorAll('.animated-section');
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
   });
+
 });
