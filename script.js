@@ -1,11 +1,13 @@
-// Año en el footer
+// año en footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Activar la rotación sólo cuando el ecosistema entra en vista (perf)
-const orbit = document.querySelector('.ring');
-if (orbit && 'IntersectionObserver' in window) {
-  const io = new IntersectionObserver(([entry]) => {
-    orbit.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
-  }, { threshold: 0.15 });
-  io.observe(orbit);
-}
+// scroll suave para anclas internas
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id.length > 1) {
+      e.preventDefault();
+      document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
