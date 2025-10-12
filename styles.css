@@ -1,145 +1,158 @@
+/* ====== Variables ====== */
 :root{
-  --bg:#0B1C2A;
-  --bg-2:#0f2233;
-  --card:#0e2334;
-  --text:#EAF2F9;
-  --muted:#96adc6;
-  --brand:#4aa1ff;
-  --brand-2:#7cc6ff;
-  --ring:#1e3a56;
+  --bg: #0d1b2a;
+  --bg-2: #0f2233;
+  --text: #e6eef6;
+  --muted: #a9b8c9;
+  --brand: #2d63ff;
+  --card: #13283c;
+  --ring: rgba(255,255,255,.08);
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
+/* ====== Base ====== */
+*{ box-sizing: border-box }
+html,body{ height:100% }
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
-  color:var(--text);
-  background:radial-gradient(1200px 600px at 70% -20%, #0d2740 0%, var(--bg) 60%);
-  letter-spacing:.2px;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 70% -10%, #13304a 0%, var(--bg) 60%);
 }
-h1,h2,h3{
-  font-family:"Playfair Display", serif;
-  margin:0 0 .6rem 0;
-}
-h1{font-size:clamp(36px,4.8vw,56px); line-height:1.12}
-h2{font-size:clamp(26px,3.2vw,38px)}
-h3{font-size:20px}
+h1,h2,h3{ font-family: 'Playfair Display', serif; margin:0 0 .6rem }
+h1{ font-size: clamp(34px, 4vw, 52px); line-height:1.16 }
+h2{ font-size: clamp(28px, 3vw, 40px) }
+h3{ font-size: clamp(18px, 2vw, 22px) }
+p{ color: var(--muted); line-height:1.6 }
+a{ color: var(--text); text-decoration: none }
 
-p{margin:.6rem 0; color:var(--muted)}
-.lead{font-size:18px}
+.container{ width:min(1200px, calc(100% - 48px)); margin-inline:auto }
+.section{ padding: 64px 0 }
 
-.container{max-width:1160px; margin:0 auto; padding:0 20px}
-
-/*** HEADER ***/
+/* ====== Header ====== */
 .site-header{
   display:flex; align-items:center; justify-content:space-between;
-  gap:20px; padding:18px 0;
+  padding:20px 0;
 }
-.brand{display:flex; align-items:center; gap:14px}
-.brand__logo{
-  width:48px; height:48px; object-fit:cover; border-radius:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,.35)
-}
-.brand__title{font-weight:700}
-.brand__subtitle{font-size:13px; color:var(--muted)}
+.brand{ display:flex; align-items:center; gap:14px }
+.brand-logo{ width:44px; height:44px; object-fit:cover; border-radius:10px; box-shadow:var(--shadow) }
+.brand-text strong{ display:block; font-weight:700 }
+.brand-text span{ color:var(--muted); font-size:14px }
 
-.nav{display:flex; gap:22px; align-items:center}
-.nav a{color:var(--muted); text-decoration:none; font-weight:600}
-.nav a:hover{color:var(--text)}
+.nav{ display:flex; align-items:center; gap:22px }
+.nav a{ opacity:.9 }
+.nav .btn{ margin-left:8px }
 
+/* ====== Buttons ====== */
 .btn{
-  background:linear-gradient(180deg,var(--brand),var(--brand-2));
-  color:#05121d; text-decoration:none; font-weight:800;
-  padding:10px 18px; border-radius:12px; display:inline-flex; align-items:center; gap:8px;
-  box-shadow:0 12px 22px rgba(74,161,255,.25); transition:transform .18s ease
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:.5rem; border-radius:12px; padding:12px 18px; font-weight:600;
+  border:1px solid transparent; transition:.2s ease;
 }
-.btn:hover{transform:translateY(-1px)}
-.btn--ghost{
-  background:transparent; color:var(--brand-2);
-  border:1px solid #2c4762; box-shadow:none
-}
-.btn--small{padding:8px 14px}
+.btn-primary{ background:var(--brand); color:#fff; box-shadow:var(--shadow) }
+.btn-primary:hover{ filter:brightness(1.05) }
+.btn-outline{ border-color:rgba(255,255,255,.22); color:var(--text) }
+.btn-outline:hover{ background:rgba(255,255,255,.06) }
 
-/*** HERO ***/
-.hero{display:grid; grid-template-columns:1.05fr .95fr; gap:34px; align-items:center; padding:28px 0 20px}
-.hero__media.card{
-  background:linear-gradient(180deg,#0a1c2e,#091a2b); border:1px solid #15344f;
-  border-radius:24px; padding:10px; box-shadow:0 20px 60px rgba(1,12,22,.55);
+/* ====== Hero ====== */
+.hero{
+  display:grid; grid-template-columns: 1.15fr .85fr; gap:48px; align-items:center;
+  padding: 36px 0 28px;
 }
-.hero__photo{
-  width:100%; height:520px; object-fit:cover; border-radius:18px;
-  display:block; filter:saturate(.95) contrast(1.02)
+.hero-photo{
+  margin:0; background: linear-gradient(140deg,#0b1523,#182a41 70%);
+  padding:18px; border-radius:24px; box-shadow: var(--shadow);
 }
-.actions{display:flex; gap:14px; margin-top:12px}
+.hero-photo img{
+  display:block; width:100%; height:520px; object-fit:cover;
+  border-radius:18px; filter:saturate(1) contrast(1.02);
+}
+.hero-copy p{ margin:18px 0 22px; max-width:52ch }
+.hero-cta{ display:flex; gap:14px; flex-wrap:wrap }
 
-/*** ECOSISTEMA ***/
-.ecosistema{padding:64px 0}
-.section-intro{color:var(--muted); margin-bottom:22px}
+/* ====== Ecosistema & Orbits ====== */
+.ecosistema .section-lead{ color:var(--muted); margin: 8px 0 24px }
 
-.orbit{
-  position:relative; height:420px; margin:26px auto 8px; max-width:620px;
-  border-radius:18px; background:linear-gradient(180deg,#0b2033 0%, #0a1a29 100%);
-  border:1px solid #14324a; box-shadow:0 18px 48px rgba(0,0,0,.45);
+.orbits{
+  position:relative; height: 460px; margin:36px auto 12px; aspect-ratio: 1.9/1;
+  display:grid; place-items:center;
 }
-.orbit__center{
-  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+.core{
+  position:absolute; width:140px; height:140px; border-radius:50%;
+  display:grid; place-items:center; background:var(--card); box-shadow: var(--shadow);
 }
-.orbit__center img{
-  width:120px; height:120px; object-fit:cover; border-radius:20px;
-  box-shadow:0 12px 30px rgba(0,0,0,.38); border:1px solid #1d3b54;
-}
+.core img{ width:100%; height:100%; object-fit:cover; border-radius:50% }
 
-.orbit__ring{
-  position:absolute; inset:55px; border:1px dashed var(--ring); border-radius:50%;
+/* three rings */
+.ring{
+  position:absolute; inset:0; margin:auto; border-radius:50%;
+  border:1.5px dashed var(--ring);
+  animation: spin 24s linear infinite;
 }
-.orbit__ring--inner{inset:120px; border-style:solid; opacity:.6}
+.ring-1{ width:360px; height:360px; animation-duration: 26s }
+.ring-2{ width:520px; height:520px; animation-duration: 36s }
+.ring-3{ width:680px; height:680px; animation-duration: 48s }
 
-.satellite{
-  position:absolute; left:50%; top:50%;
-  transform:translate(-50%,-50%);
-  width:128px; height:128px; display:flex; align-items:center; justify-content:center;
-  border-radius:14px; background:#0f2438; border:1px solid #1a3b56;
-  box-shadow:0 10px 28px rgba(0,0,0,.35);
-  animation:spin 18s linear infinite;
+@keyframes spin { to{ transform: rotate(360deg) } }
+
+.node{
+  position:absolute; padding:10px 14px; border-radius:24px;
+  background: rgba(255,255,255,.06); backdrop-filter: blur(4px);
+  border:1px solid rgba(255,255,255,.18); color:#eaf1f8; font-weight:600; font-size:14px;
+  box-shadow: var(--shadow);
 }
-.satellite span{padding:10px; text-align:center; color:var(--text); font-weight:600; font-size:14px}
+/* positions along the ring (three per ring) */
+.ring-1 .node:nth-child(1){ top:-18px; left:50%; transform:translateX(-50%) }
+.ring-1 .node:nth-child(2){ bottom:15%; left:-10px }
+.ring-1 .node:nth-child(3){ bottom:10%; right:-16px }
 
-/* posiciones angulares + radios */
-.sat--1{--r:190px; --a:10deg}
-.sat--2{--r:190px; --a:130deg}
-.sat--3{--r:190px; --a:250deg}
-.sat--4{--r:120px; --a:50deg; animation-duration:16s}
-.sat--5{--r:120px; --a:170deg; animation-duration:16s}
-.sat--6{--r:120px; --a:290deg; animation-duration:16s}
+.ring-2 .node:nth-child(1){ top:8%; left:72% }
+.ring-2 .node:nth-child(2){ top:50%; left:-24px; transform:translateY(-50%) }
+.ring-2 .node:nth-child(3){ bottom:12%; left:67% }
 
-@keyframes spin{
-  from{ transform: translate(-50%,-50%) rotate(var(--a)) translateX(var(--r)) rotate(calc(-1*var(--a))); }
-  to  { transform: translate(-50%,-50%) rotate(calc(var(--a) + 360deg)) translateX(var(--r)) rotate(calc(-1*(var(--a) + 360deg))); }
+.ring-3 .node:nth-child(1){ top:-8px; left:22% }
+.ring-3 .node:nth-child(2){ top:45%; right:-26px; transform:translateY(-50%) }
+.ring-3 .node:nth-child(3){ bottom:-6px; left:32% }
+
+/* logos debajo */
+.logos{
+  display:flex; gap:24px; align-items:center; justify-content:center;
+  margin-top:8px; opacity:.9;
 }
+.logos img{ height:52px; width:auto; border-radius:10px; box-shadow: var(--shadow) }
 
-.ecosistema__footnote{
-  display:flex; align-items:center; gap:12px; color:var(--muted); margin-top:10px;
+/* ====== Servicios ====== */
+.servicios .grid{
+  margin-top:22px;
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:18px;
 }
-.ecosistema__mabui{height:26px; border-radius:6px; border:1px solid #1d3b54}
-
-/*** SERVICIOS ***/
-.servicios{padding:56px 0}
-.grid{
-  display:grid; gap:18px;
-  grid-template-columns:repeat(3, 1fr);
+.card{
+  background: var(--card);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px; padding:18px 18px 14px; box-shadow: var(--shadow);
 }
-.svc{
-  background:linear-gradient(180deg,#0b2033,#0a1a29);
-  border:1px solid #15344f; border-radius:16px; padding:18px;
-  box-shadow:0 12px 34px rgba(0,0,0,.42);
+.card h3{ margin-bottom:8px }
+.card ul{ margin:0; padding-left:18px; color:var(--muted) }
+.card li{ margin:6px 0 }
+
+/* ====== Contacto ====== */
+.contacto p{ color:var(--muted) }
+.contact-actions{ display:flex; gap:12px; margin-top:10px; flex-wrap:wrap }
+
+/* ====== Footer ====== */
+.footer{ padding:24px 0; margin-top:36px; background: var(--bg-2); border-top:1px solid rgba(255,255,255,.06) }
+.footer-inner{ display:flex; align-items:center; justify-content:space-between; color:var(--muted) }
+.footer a{ color: var(--text) }
+
+/* ====== Responsive ====== */
+@media (max-width: 980px){
+  .hero{ grid-template-columns: 1fr; }
+  .hero-photo img{ height: 380px }
+  .orbits{ transform: scale(.84) }
+  .servicios .grid{ grid-template-columns: 1fr 1fr }
 }
-.svc ul{margin:.4rem 0 0 1.1rem}
-.svc li{color:var(--muted); margin:.32rem 0}
-
-.sell{display:flex; align-items:center; gap:12px; margin-top:18px; color:var(--muted)}
-.badge{height:38px; border-radius:8px; border:1px solid #1d3b54}
-
-/*** CONTACTO + FOOTER ***/
-.contacto{padding:48px 0}
-.site-footer{padding
+@media (max-width: 640px){
+  .nav{ display:none }
+  .servicios .grid{ grid-template-columns: 1fr }
+  .orbits{ transform: scale(.72) }
+}
