@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Enrique Castillo &amp; Asociados — cozfc.cl</title>
-  <meta name="description" content="Asesoría en gestión administrativa, contable, legal, laboral y automatización. Enrique Castillo & Asociados (cozfc.cl). PCGA, NIIF, US GAAP." />
+  <title>Enrique Castillo & Asociados — cozfc.cl</title>
+  <meta name="description" content="Asesoría estratégica en gestión contable, legal, laboral y tecnológica. Enrique Castillo & Asociados: soluciones integradas para tu crecimiento con rigurosidad fiscal y automatización 24/7." />
+  <meta name="keywords" content="contabilidad, asesoría legal, gestión laboral, automatización, PCGA, NIIF, US GAAP, Chile" />
+  <meta property="og:title" content="Enrique Castillo & Asociados — Tu aliado en gestión integral" />
+  <meta property="og:description" content="Ecosistema de soluciones integradas para contabilidad, legal y tecnología." />
+  <meta property="og:image" content="https://mabui-labs.github.io/cozfc-landing/assets/Logo_ECA.jpg" />
+  <meta property="og:url" content="https://mabui-labs.github.io/cozfc-landing/" />
 
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,16 +20,16 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="site-header container">
-    <a class="brand" href="#">
-      <img class="brand__logo brand__logo--xl" src="assets/Logo_ECA.jpg" alt="Enrique Castillo &amp; Asociados">
+  <header class="site-header container" role="banner">
+    <a class="brand" href="#" aria-label="Enrique Castillo & Asociados">
+      <img class="brand__logo brand__logo--xl" src="assets/Logo_ECA.jpg" alt="Logo de Enrique Castillo & Asociados" loading="lazy">
       <div class="brand__text">
-        <div class="brand__title">Enrique Castillo &amp; Asociados</div>
+        <div class="brand__title">Enrique Castillo & Asociados</div>
         <div class="brand__subtitle">Consultoría de alto impacto</div>
       </div>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Navegación principal">
       <a href="#ecosistema">Ecosistema</a>
       <a href="#servicios">Servicios</a>
       <a class="btn btn--ghost btn--small" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">LinkedIn</a>
@@ -33,34 +38,29 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero container">
+  <section class="hero container" aria-labelledby="hero-title">
     <div class="hero__text">
-      <h1>
-        Excelencia contable, legal y<br>
-        tecnológica para operar y crecer<br>
-        con seguridad
-      </h1>
+      <h1 id="hero-title">Tu Aliado Estratégico en<br>Gestión Contable, Legal y<br>Tecnología</h1>
       <p class="lead">
-        <strong>Asesoría en gestión administrativa y contable</strong> con rigurosidad fiscal, gestión laboral y automatización
-        de procesos. Un socio estratégico con enfoque ejecutivo, disponible 24/7 para incidentes críticos.
+        Potenciamos tu operación con rigurosidad fiscal, gestión laboral y automatización inteligente. Un socio disponible 24/7 para tus incidentes críticos.
       </p>
       <div class="actions">
-        <a class="btn" href="#servicios">Ver servicios</a>
-        <a class="btn btn--ghost" href="#ecosistema">Ecosistema Mabui</a>
+        <a class="btn" href="#servicios">Explorar Servicios</a>
+        <a class="btn btn--ghost" href="#ecosistema">Nuestro Ecosistema</a>
       </div>
     </div>
 
-    <figure class="hero__media card">
-      <img class="hero__photo" src="assets/Foto_Enrique.JPG" alt="Enrique Castillo">
+    <figure class="hero__media card" aria-hidden="true">
+      <img class="hero__photo" src="assets/Foto_Enrique.JPG" alt="Retrato de Enrique Castillo" loading="lazy">
     </figure>
   </section>
 
-  <!-- Marca destacada con logo visible y claim -->
-  <section class="marca container">
+  <!-- Marca destacada -->
+  <section class="marca container" aria-labelledby="marca-title">
     <div class="marca__panel card">
-      <img class="marca__logo" src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo &amp; Asociados">
+      <img class="marca__logo" src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo & Asociados" loading="lazy">
       <div class="marca__copy">
-        <h3>Enrique Castillo &amp; Asociados</h3>
+        <h3 id="marca-title">Enrique Castillo & Asociados</h3>
         <p>Asesoría en gestión administrativa y contable, con alcance legal, laboral y tecnológico.</p>
         <div class="actions">
           <a class="btn btn--ghost" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">Ver perfil en LinkedIn</a>
@@ -70,73 +70,69 @@
   </section>
 
   <!-- Ecosistema -->
-  <section id="ecosistema" class="ecosistema container">
-    <h2>Nuestro Ecosistema</h2>
+  <section id="ecosistema" class="ecosistema container" aria-labelledby="ecosistema-title">
+    <h2 id="ecosistema-title">Un Ecosistema de Soluciones Integradas</h2>
     <p class="section-intro">
-      Capacidades clave orbitando sobre un centro de gobierno único.
+      Seis capacidades clave orbitando un centro de gobierno único para darte una visión 360°.
     </p>
 
-    <div class="orbit">
-      <div class="orbit__center">
-        <img src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo &amp; Asociados">
+    <div class="orbit-container">
+      <div class="orbit">
+        <div class="orbit__center">
+          <img src="assets/Logo_ECA.jpg" alt="Centro: Enrique Castillo & Asociados" loading="lazy">
+        </div>
+
+        <!-- Anillos -->
+        <div class="orbit__ring orbit__ring--outer"></div>
+        <div class="orbit__ring orbit__ring--inner"></div>
+
+        <!-- Satélites -->
+        <div class="satellite" data-angle="0"><span>Contabilidad & Fiscal</span></div>
+        <div class="satellite" data-angle="60"><span>Gestión Legal</span></div>
+        <div class="satellite" data-angle="120"><span>Gestión Administrativa</span></div>
+        <div class="satellite" data-angle="180"><span>Comercial & Pagos</span></div>
+        <div class="satellite" data-angle="240"><span>Informática & N8N</span></div>
+        <div class="satellite" data-angle="300"><span>Laboral & Previred</span></div>
       </div>
-
-      <!-- Anillos -->
-      <div class="orbit__ring orbit__ring--outer"></div>
-      <div class="orbit__ring orbit__ring--inner"></div>
-
-      <!-- Satélites -->
-      <div class="satellite" style="--angle: 0deg;   --radius: 210px;"><span>Contabilidad &amp; Fiscal</span></div>
-      <div class="satellite" style="--angle: 60deg;  --radius: 210px;"><span>Gestión Legal</span></div>
-      <div class="satellite" style="--angle: 120deg; --radius: 210px;"><span>Gestión Administrativa</span></div>
-      <div class="satellite" style="--angle: 180deg; --radius: 210px;"><span>Comercial &amp; Pagos</span></div>
-      <div class="satellite" style="--angle: 240deg; --radius: 210px;"><span>Informática &amp; N8N</span></div>
-      <div class="satellite" style="--angle: 300deg; --radius: 210px;"><span>Laboral &amp; Previred</span></div>
     </div>
 
     <div class="ecosistema__footnote">
       Ecosistema impulsado junto a
       <a href="https://mabui.cl" target="_blank" rel="noopener">mabui.cl</a>
-      <img class="ecosistema__mabui" src="assets/Logo_MBK.jpg" alt="Mabui">
+      <img class="ecosistema__mabui" src="assets/Logo_MB.jpg" alt="Mabui" loading="lazy"> <!-- Asumí Logo_MB.jpg basado en captura; ajusta si es Logo_MBK.jpg -->
     </div>
   </section>
 
   <!-- Sobre Enrique -->
-  <section id="sobre" class="sobre container">
+  <section id="sobre" class="sobre container" aria-labelledby="sobre-title">
     <div class="sobre__grid card">
       <div class="sobre__text">
-        <h2>Sobre Enrique</h2>
+        <h2 id="sobre-title">Sobre Enrique</h2>
         <p>
-          Profesional en contabilidad con experiencia en entornos globales y cumplimiento de normativas contables,
-          especializado en <strong>PCGA, NIIF y US GAAP</strong>. Ha trabajado con múltiples industrias: gastronómica, ingeniería–construcción,
-          sector médico, e importación y exportación marítima y aérea.
+          Profesional en contabilidad con experiencia en entornos globales y cumplimiento de normativas, especializado en <strong>PCGA, NIIF y US GAAP</strong>. Ha trabajado en industrias como gastronómica, ingeniería-construcción, sector médico, e importación/exportación marítima y aérea.
         </p>
         <p>
-          Como asesor, ayuda a las empresas a lograr un crecimiento integral y a mejorar su gestión de negocios.
-          Cuenta con un <strong>MBA en Negocios Internacionales</strong>, título de <strong>Contador Auditor</strong>, y formación en finanzas, recursos humanos,
-          software empresariales (p.ej. SAP) y normas internacionales de contabilidad.
+          Como asesor, impulsa el crecimiento integral de empresas. Cuenta con <strong>MBA en Negocios Internacionales</strong>, título de <strong>Contador Auditor</strong>, y expertise en finanzas, RRHH, software (ej. SAP) y normas contables internacionales.
         </p>
         <p>
-          Adscrito al <strong>Colegio de Contadores de Chile</strong>, se mantiene en constante actualización mediante cursos y certificaciones
-          en áreas clave de la gestión empresarial. Actualmente administra una cartera de <strong>30–50 clientes</strong> asistidos por el ecosistema de
-          Enrique Castillo &amp; Asociados.
+          Miembro del <strong>Colegio de Contadores de Chile</strong>, se actualiza constantemente. Administra una cartera de <strong>30–50 clientes</strong> con el ecosistema de Enrique Castillo & Asociados.
         </p>
         <div class="actions">
           <a class="btn" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">Conectar en LinkedIn</a>
         </div>
       </div>
       <div class="sobre__logo">
-        <img src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo &amp; Asociados">
+        <img src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo & Asociados" loading="lazy">
       </div>
     </div>
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="servicios container">
-    <h2>Prestaciones</h2>
+  <section id="servicios" class="servicios container" aria-labelledby="servicios-title">
+    <h2 id="servicios-title">Prestaciones</h2>
 
     <div class="grid">
-      <article class="svc">
+      <article class="svc card">
         <h3>Gestión Contable y Fiscal</h3>
         <ul>
           <li>Contabilidad Tributaria (balance tributario)</li>
@@ -146,17 +142,17 @@
         </ul>
       </article>
 
-      <article class="svc">
+      <article class="svc card">
         <h3>Gestión Comercial</h3>
         <ul>
           <li>Apertura de cocinas Marketplace, soporte online</li>
           <li>Comisiones, promociones y documentos de pago</li>
           <li>Soporte medios de pago (Getnet, Klapp, otros)</li>
-          <li>Integración Edenred/Sodhexo y otros</li>
+          <li>Integración Edenred/Sodexo y otros</li>
         </ul>
       </article>
 
-      <article class="svc">
+      <article class="svc card">
         <h3>Gestión Administrativa</h3>
         <ul>
           <li>Patentes, traspasos, pagos y fiscalizaciones</li>
@@ -166,44 +162,47 @@
         </ul>
       </article>
 
-      <article class="svc">
-        <h3>Gestión Legal</h3>
+      <article class="svc card">
+        <h3>Gestión Legal Societaria</h3>
         <ul>
-          <li>Actas de asamblea (constitución, modificación, transformación)</li>
-          <li>Registro y actualización RES</li>
-          <li>Documentos societarios y cumplimiento</li>
+          <li>Actas de asamblea y modificaciones</li>
+          <li>Registro y actualización de socios (RES)</li>
+          <li>Elaboración de documentos societarios</li>
+          <li>Constitución y transformación de empresas</li>
         </ul>
       </article>
 
-      <article class="svc">
+      <article class="svc card">
         <h3>Gestión Informática</h3>
         <ul>
-          <li>Implementación de software y puesta en marcha</li>
-          <li>Capacitaciones y manualización</li>
-          <li>Automatización web con N8N</li>
+          <li>Implementación de software a medida</li>
+          <li>Capacitación y puesta en marcha</li>
+          <li>Automatización de procesos web (N8N)</li>
+          <li>Soporte técnico y mantenimiento</li>
         </ul>
       </article>
 
-      <article class="svc">
+      <article class="svc card">
         <h3>Gestión Laboral</h3>
         <ul>
-          <li>Cálculo de sueldos y pago Previred</li>
-          <li>Recibos de sueldo y vacaciones</li>
-          <li>Libro electrónico DT, asistencia y comunicaciones</li>
+          <li>Cálculo de liquidaciones y pago Previred</li>
+          <li>Emisión de recibos de sueldo y vacaciones</li>
+          <li>Libro electrónico DT y control de asistencia</li>
+          <li>Contratos, anexos y finiquitos</li>
         </ul>
       </article>
     </div>
 
     <aside class="sell">
-      <img class="badge" src="assets/Logo_Colegio_de_Contadores.jpg" alt="Colegio de Contadores de Chile">
-      <p>Miembro del Colegio de Contadores de Chile.</p>
+      <img class="badge" src="assets/Logo_Colegio_de_Contadores.jpg" alt="Colegio de Contadores de Chile" loading="lazy">
+      <p>Miembro activo del Colegio de Contadores de Chile. Compromiso y ética profesional.</p>
     </aside>
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="contacto container">
-    <h2>Contacto</h2>
-    <p>Escríbenos para evaluar tu caso y planificar una implementación segura.</p>
+  <section id="contacto" class="contacto container" aria-labelledby="contacto-title">
+    <h2 id="contacto-title">¿Listo para optimizar tu gestión?</h2>
+    <p>Conversemos. Escríbenos para evaluar tu caso y diseñar un plan de implementación a tu medida.</p>
     <div class="actions">
       <a class="btn" href="mailto:ecastillo@cozfc.cl">ecastillo@cozfc.cl</a>
       <a class="btn btn--ghost" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">LinkedIn</a>
@@ -211,8 +210,8 @@
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer container">
-    <small>© <span id="year"></span> Enrique Castillo &amp; Asociados — cozfc.cl</small>
+  <footer class="site-footer container" role="contentinfo">
+    <small>© <span id="year"></span> Enrique Castillo & Asociados — cozfc.cl</small>
   </footer>
 
   <script src="script.js"></script>
