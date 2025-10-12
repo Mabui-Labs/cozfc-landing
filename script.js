@@ -22,13 +22,13 @@ function initOrbit() {
 
   const satellites = orbit.querySelectorAll('.satellite');
   let rotation = 0;
-  const speed = 36; // Segundos por rotación completa
+  const speed = 0.5; // Segundos por rotación completa (ajusta para más lento/rápido)
 
   function animate() {
-    rotation += 360 / (60 * (speed / 60)); // Ajuste suave
+    rotation += 360 / (60 / speed); // Ajuste para ~36s como original
     satellites.forEach(sat => {
       const angle = parseInt(sat.dataset.angle) + rotation;
-      const rad = (angle * Math.PI) / 180;
+      const rad = angle * (Math.PI / 180);
       const radius = 210; // px
       sat.style.left = `calc(50% + ${radius * Math.cos(rad)}px)`;
       sat.style.top = `calc(50% + ${radius * Math.sin(rad)}px)`;
