@@ -1,7 +1,7 @@
-// año en footer
+// Año en el footer
 document.getElementById('y').textContent = new Date().getFullYear();
 
-// (Opcional) scroll suave
+// Scroll suave para anclas del menú
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click', e=>{
     const id = a.getAttribute('href');
