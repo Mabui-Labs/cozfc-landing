@@ -1,131 +1,213 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Enrique Castillo & Asociados — Consultoría de Alto Impacto</title>
-  <meta name="description" content="Ecosistema de gestión administrativa, contable, legal y tecnológica. Enrique Castillo & Asociados." />
 
-  <!-- Tipografías -->
+  <title>Enrique Castillo & Asociados — Consultoría de alto impacto</title>
+  <meta name="description" content="Ecosistema de gestión contable, legal, laboral, administrativa, comercial e informática. Consultoría de alto impacto.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/Coz_Favicon.png" />
+
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
+  <!-- Estilos -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <div class="page-bg" aria-hidden="true"></div>
 
-  <!-- Header -->
   <header class="site-header">
-    <div class="brand">
-      <img src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo & Asociados" class="brand__logo">
-      <div class="brand__text">
-        <span class="brand__title">Enrique Castillo & Asociados</span>
-        <span class="brand__subtitle">Consultoría de Alto Impacto</span>
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-title">Enrique Castillo &amp; Asociados</span>
+        <span class="brand-subtitle">Consultoría de alto impacto</span>
       </div>
+      <nav class="nav">
+        <a href="#ecosistema">Ecosistema</a>
+        <a href="#gestiones">Gestiones</a>
+        <a class="btn btn-primary" href="#contacto">Contacto</a>
+      </nav>
     </div>
-
-    <nav class="site-nav">
-      <a href="#ecosistema">Ecosistema</a>
-      <a href="#perfil">Perfil</a>
-      <a class="btn btn--primary" href="#contacto">Contacto</a>
-    </nav>
   </header>
 
-  <main>
-    <!-- ECOSISTEMA (ARRIBA) -->
-    <section id="ecosistema" class="section section--ecosystem">
-      <div class="container">
-        <h2 class="section__title">Nuestro Ecosistema de Gestión</h2>
-        <p class="section__subtitle">
-          Capacidades clave orbitando sobre un centro de gobierno único, para darte una visión 360°.
+  <!-- HERO / ECOSISTEMA -->
+  <section id="ecosistema" class="section hero">
+    <div class="container">
+      <div class="hero-headline">
+        <h1>Nuestro Ecosistema de Gestión</h1>
+        <p>Capacidades clave orbitando sobre un centro de gobierno único para una visión 360°.</p>
+      </div>
+
+      <div class="orbital">
+        <!-- anillos -->
+        <span class="ring ring-1"></span>
+        <span class="ring ring-2"></span>
+
+        <!-- centro (logo eca) -->
+        <div class="core">
+          <img src="assets/Logo_ECA.jpg" alt="Enrique Castillo & Asociados" />
+        </div>
+
+        <!-- items (posicionados con CSS) -->
+        <div class="node node-1">
+          <img src="assets/Gestion_Contable_Fiscal.jpg" alt="Contabilidad & Fiscal" />
+          <span>Contabilidad &amp; Fiscal</span>
+        </div>
+        <div class="node node-2">
+          <img src="assets/Gestion_Legal.jpg" alt="Gestión Legal" />
+          <span>Gestión Legal</span>
+        </div>
+        <div class="node node-3">
+          <img src="assets/Gestion_Administrativa.jpg" alt="Gestión Administrativa" />
+          <span>Gestión Administrativa</span>
+        </div>
+        <div class="node node-4">
+          <img src="assets/Gestion_Comercial.jpg" alt="Comercial & Pagos" />
+          <span>Comercial &amp; Pagos</span>
+        </div>
+        <div class="node node-5">
+          <img src="assets/Gestion_Informatica.jpg" alt="Informática & N8N" />
+          <span>Informática &amp; N8N</span>
+        </div>
+        <div class="node node-6">
+          <img src="assets/Gestion_laboral.jpg" alt="Laboral & Previred" />
+          <span>Laboral &amp; Previred</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GESTIONES -->
+  <section id="gestiones" class="section">
+    <div class="container">
+      <h2 class="section-title">Áreas de Gestión</h2>
+
+      <div class="grid-cards">
+        <!-- Contable & Fiscal -->
+        <article class="card">
+          <img class="card-img" src="assets/Gestion_Contable_Fiscal.jpg" alt="Contabilidad & Fiscal" />
+          <div class="card-body">
+            <h3>Gestión Contable y Fiscal</h3>
+            <ul>
+              <li>Contabilidad tributaria (balance, PCGA, NIIF, USGAAP).</li>
+              <li>Formulario 29 IVA (confección, rectificativas y pagos).</li>
+              <li>Portal SII (modificaciones, peticiones y administración).</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Administrativa -->
+        <article class="card">
+          <img class="card-img" src="assets/Gestion_Administrativa.jpg" alt="Gestión Administrativa" />
+          <div class="card-body">
+            <h3>Gestión Administrativa</h3>
+            <ul>
+              <li>Trámites municipales, Seremi de Salud, INAPI.</li>
+              <li>Revisión de contratos, costeo y reportes.</li>
+              <li>Gestión de pagos y coordinación de especialistas.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Legal -->
+        <article class="card">
+          <img class="card-img" src="assets/Gestion_Legal.jpg" alt="Gestión Legal" />
+          <div class="card-body">
+            <h3>Gestión Legal</h3>
+            <ul>
+              <li>Constitución de empresas y modificaciones.</li>
+              <li>RES: libro de accionistas, actas y acuerdos.</li>
+              <li>Asesoría legal externa.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Comercial -->
+        <article class="card">
+          <img class="card-img" src="assets/Gestion_Comercial.jpg" alt="Gestión Comercial" />
+          <div class="card-body">
+            <h3>Gestión Comercial</h3>
+            <ul>
+              <li>Implementación de Marketplaces.</li>
+              <li>Marketing y diseño web; publicidad digital.</li>
+              <li>Contratación con adquirentes y medios de pago.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Informática -->
+        <article class="card">
+          <img class="card-img" src="assets/Gestion_Informatica.jpg" alt="Gestión Informática" />
+          <div class="card-body">
+            <h3>Gestión Informática</h3>
+            <ul>
+              <li>Implementación ERP y software.</li>
+              <li>Automatizaciones con N8N.</li>
+              <li>Soporte y asistencia remota.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Laboral -->
+        <article class="card">
+          <img class="card-img" src="assets/Gestion_laboral.jpg" alt="Gestión Laboral" />
+          <div class="card-body">
+            <h3>Gestión Laboral</h3>
+            <ul>
+              <li>Liquidaciones de sueldo y pago Previred.</li>
+              <li>Recibos de sueldo, vacaciones y asistencia.</li>
+              <li>LRE y comunicaciones laborales.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENRIQUE CASTILLO -->
+  <section id="sobre" class="section about">
+    <div class="container about-inner">
+      <div class="about-media">
+        <img src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo & Asociados" />
+      </div>
+      <div class="about-content">
+        <h2 class="section-title">Enrique Castillo — MBA / Contador Auditor</h2>
+        <p>
+          Profesional con experiencia en contabilidad, trabajando en entornos globales y cumpliendo normativas contables. Especializado en PCGA, NIIF y USGAP.
+          Dedicado a ayudar a las empresas a lograr un crecimiento integral y mejorar su gestión de negocios.
         </p>
-
-        <div class="ecosystem">
-          <!-- Anillos -->
-          <div class="ring ring--outer"></div>
-          <div class="ring ring--middle"></div>
-          <div class="ring ring--inner"></div>
-
-          <!-- Centro -->
-          <div class="ecosystem__center">
-            <img src="assets/Logo_ECA.jpg" alt="Enrique Castillo & Asociados" />
-          </div>
-
-          <!-- Chips posicionados (sin animaciones para máxima estabilidad) -->
-          <div class="chip chip--top">Contabilidad & Fiscal</div>
-          <div class="chip chip--top-right">Gestión Legal</div>
-          <div class="chip chip--right">Gestión Administrativa</div>
-          <div class="chip chip--bottom-right">Comercial & Pagos</div>
-          <div class="chip chip--bottom">Informática & N8N</div>
-          <div class="chip chip--left">Laboral & Previred</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PERFIL (DEBAJO DEL ECOSISTEMA) -->
-    <section id="perfil" class="section section--profile">
-      <div class="container">
-        <div class="profile-grid">
-          <div class="profile-grid__item">
-            <div class="card equal-media">
-              <img src="assets/Foto_Enrique.JPG" alt="Retrato de Enrique Castillo" />
-            </div>
-          </div>
-
-          <div class="profile-grid__item">
-            <div class="card equal-media">
-              <img src="assets/Logo_ECA.jpg" alt="Logo Enrique Castillo & Asociados" />
-            </div>
-          </div>
-        </div>
-
-        <div class="profile-info">
-          <h3 class="profile-info__title">Enrique Castillo — MBA / Contador Auditor</h3>
-          <p class="profile-info__text">
-            Profesional con experiencia en contabilidad, trabajando en entornos globales y cumpliendo normativas contables.
-            Especializado en PCGA, NIIF y USGAAP. Con conocimiento en industrias gastronómica, ingeniería–construcción, sector médico,
-            e importación y exportación marítima y aérea.
-          </p>
-          <p class="profile-info__text">
-            Como Asesor, me dedico a ayudar a las empresas a lograr un crecimiento integral y mejorar su gestión de negocios. Cuento con
-            una amplia formación, incluyendo un MBA en Negocios Internacionales, un título de Contador Auditor, y cursos en finanzas,
-            recursos humanos, manejo de software empresariales (SAP) y normas internacionales de contabilidad. Adscrito al Colegio
-            de Contadores de Chile y en actualización constante mediante cursos y certificaciones.
-          </p>
-          <p class="profile-info__text">
-            Actualmente mantengo una cartera de 30–50 clientes que cuentan con la asistencia del Ecosistema de Enrique Castillo & Asociados.
-          </p>
-
-          <div class="profile-info__cta">
-            <a class="btn btn--outline" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">
-              Ver mi LinkedIn
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="section section--contact">
-      <div class="container">
-        <h2 class="section__title">Contacto</h2>
-        <p class="section__subtitle">
-          Escríbenos para evaluar tu caso y planificar una implementación segura.
+        <p>
+          Amplia formación académica: MBA en Negocios Internacionales, título de Contador Auditor, y cursos en finanzas y recursos humanos.
+          Adscrito al Colegio de Contadores de Chile.
         </p>
-        <div class="contact-cta">
-          <a class="btn btn--primary" href="mailto:ecastillo@cozfc.cl">ecastillo@cozfc.cl</a>
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
+        <a class="btn btn-light" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">Ver LinkedIn</a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- FOOTER -->
+  <!-- CONTACTO -->
+  <section id="contacto" class="section contact">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <p>Escríbenos para evaluar tu caso y planificar una implementación segura.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:ecastillo@cozfc.cl">ecastillo@cozfc.cl</a>
+        <a class="btn" href="https://www.linkedin.com/in/castillovillalobos/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
-    <div class="container footer__inner">
-      <span>© <span id="year"></span> Enrique Castillo & Asociados</span>
-      <a class="madeby" href="https://mabui.cl" target="_blank" rel="noopener">Tecnología by Mabui</a>
+    <div class="container footer-inner">
+      <span>© 2025 Enrique Castillo &amp; Asociados</span>
+      <span>—</span>
+      <a href="https://mabui.cl" target="_blank" rel="noopener">Tecnología by Mabui</a>
     </div>
   </footer>
 
