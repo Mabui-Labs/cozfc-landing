@@ -22,7 +22,7 @@
         <img src="assets/Logo_ECA.jpg" alt="Logo ECA">
         <div class="brand-text">
           <strong>Enrique Castillo & Asociados</strong>
-          <span>Consultoría de alto impacto</span>
+          <span>Consultoría de Gestión Integral</span>
         </div>
       </a>
 
@@ -39,7 +39,6 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-media">
-          <!-- IMPORTANTE: usas la imagen de “sobre Enrique” aquí -->
           <img src="assets/Sobre_EnriqueCastillo.jpg" alt="Sobre Enrique Castillo">
         </div>
 
@@ -66,42 +65,39 @@
     <section id="ecosistema" class="ecosystem">
       <div class="container">
         <h2>Nuestro Ecosistema de Gestión</h2>
-        <p class="sub">
-          Capacidades clave orbitando sobre un centro de gobierno único, para una visión 360°.
-        </p>
+        <p class="sub">Capacidades clave orbitando sobre un centro de gobierno único, para una visión 360°.</p>
 
         <div class="orbit-card">
-          <!-- fondo de círculos -->
+          <!-- Anillos -->
           <div class="rings">
             <div class="ring ring-1"></div>
             <div class="ring ring-2"></div>
           </div>
 
-          <!-- Centro: logo redondo -->
+          <!-- Centro -->
           <div class="core">
             <img src="assets/Logo_ECA.jpg" alt="Logo ECA">
           </div>
 
-          <!-- Carrusel orbitando (ordenas con --angle) -->
-          <div class="orbit">
-            <div class="node" style="--angle: 10deg;"><span>Comercial & Pagos</span></div>
-            <div class="node" style="--angle: 85deg;"><span>Contabilidad & Fiscal</span></div>
-            <div class="node" style="--angle: 160deg;"><span>Laboral & Previred</span></div>
-            <div class="node" style="--angle: 235deg;"><span>Gestión Legal</span></div>
-            <div class="node" style="--angle: 305deg;"><span>Gestión Administrativa</span></div>
-            <div class="node" style="--angle: 345deg;"><span>Informática & N8N</span></div>
+          <!-- Órbita (los data-angle definen la separación) -->
+          <div class="orbit" data-speed="0.06">
+            <div class="node" data-angle="10"><span>Comercial & Pagos</span></div>
+            <div class="node" data-angle="80"><span>Contabilidad & Fiscal</span></div>
+            <div class="node" data-angle="150"><span>Laboral & Previred</span></div>
+            <div class="node" data-angle="220"><span>Gestión Legal</span></div>
+            <div class="node" data-angle="290"><span>Gestión Administrativa</span></div>
+            <div class="node" data-angle="340"><span>Informática & N8N</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Áreas de gestión (tarjetas) -->
+    <!-- Áreas de gestión -->
     <section id="gestiones" class="gestiones">
       <div class="container">
         <h2>Áreas de Gestión</h2>
 
         <div class="grid-gestiones">
-          <!-- Contable & Fiscal -->
           <article class="card">
             <img src="assets/Gestion_Contable_Fiscal.jpg" alt="Gestión contable y fiscal">
             <div class="card-body">
@@ -114,7 +110,6 @@
             </div>
           </article>
 
-          <!-- Administrativa -->
           <article class="card">
             <img src="assets/Gestion_Administrativa.jpg" alt="Gestión administrativa">
             <div class="card-body">
@@ -127,7 +122,6 @@
             </div>
           </article>
 
-          <!-- Legal -->
           <article class="card">
             <img src="assets/Gestion_Legal.jpg" alt="Gestión legal">
             <div class="card-body">
@@ -140,7 +134,6 @@
             </div>
           </article>
 
-          <!-- Comercial -->
           <article class="card">
             <img src="assets/Gestion_Comercial.jpg" alt="Gestión comercial">
             <div class="card-body">
@@ -153,7 +146,6 @@
             </div>
           </article>
 
-          <!-- Informática -->
           <article class="card">
             <img src="assets/Gestion_Informatica.jpg" alt="Gestión informática">
             <div class="card-body">
@@ -166,7 +158,7 @@
             </div>
           </article>
 
-          <!-- Laboral (RUTA CORREGIDA) -->
+          <!-- Laboral (ruta SIN acento) -->
           <article class="card">
             <img src="assets/Gestion_laboral.jpg" alt="Gestión laboral">
             <div class="card-body">
@@ -205,3 +197,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
