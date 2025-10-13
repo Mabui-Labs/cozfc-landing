@@ -10,13 +10,16 @@
   --header-h:74px;
 }
 
-/* Reset mínimo */
+/* Reset */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
   color:var(--ink);
-  background:#0a1620 url("assets/Fondo_paginaweb1.jpg") center/cover fixed no-repeat;
+  /* Fondo más visible */
+  background:
+    radial-gradient(ellipse at center, rgba(8,14,20,.45), rgba(8,14,20,.65)),
+    url("assets/Fondo_paginaweb1.jpg") center/cover fixed no-repeat;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 img{max-width:100%;display:block}
@@ -53,7 +56,7 @@ img{max-width:100%;display:block}
   color:#fff;text-decoration:none;font-weight:600;
   padding:.65rem 1rem;border-radius:12px;
   border:1px solid rgba(255,255,255,.25);
-  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));
   backdrop-filter:blur(5px);
 }
 
@@ -111,28 +114,21 @@ p{color:var(--ink-muted);line-height:1.6}
   filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));
 }
 
-/* Órbita: siempre legible */
+/* Órbita (JS posiciona, no rotamos el chip) */
 .orbit{
   position:absolute;left:50%;top:50%;translate:-50% -50%;
   width:520px;height:520px;border-radius:50%;
-  animation:spin 36s linear infinite;
-}
-@keyframes spin{
-  from{transform:rotate(0deg)}
-  to{transform:rotate(360deg)}
 }
 .node{
   position:absolute;left:50%;top:50%;
-  transform: rotate(var(--angle)) translate(240px) rotate(calc(-1 * var(--angle)));
-  /* Anillo exterior (240px ~= ring-1/2) */
+  transform: translate(-50%, -50%);
 }
 .node span{
   display:inline-block;padding:.55rem .95rem;border-radius:999px;
   background:linear-gradient(180deg, #153450, #0f2b44);
   color:#f1f6fb;font-weight:700;letter-spacing:.1px;
   box-shadow:0 10px 18px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.12);
-  white-space:nowrap;
-  border:1px solid rgba(255,255,255,.08);
+  white-space:nowrap;border:1px solid rgba(255,255,255,.08);
 }
 
 /* Tarjetas de gestión */
@@ -164,18 +160,16 @@ p{color:var(--ink-muted);line-height:1.6}
 .site-footer .container{display:flex;justify-content:space-between;gap:10px;color:var(--ink-muted)}
 .site-footer a{color:#fff;text-decoration:none}
 
-/* Utilidades responsive */
+/* Responsive */
 @media (max-width: 980px){
   .hero-grid{grid-template-columns:1fr}
   .orbit-card{height:520px}
   .ring-1,.orbit{width:420px;height:420px}
   .ring-2{width:280px;height:280px}
-  .node{transform: rotate(var(--angle)) translate(195px) rotate(calc(-1 * var(--angle)))}
   .card{grid-template-columns:1fr}
   .card img{height:200px}
 }
 @media (max-width: 560px){
   .ring-1,.orbit{width:320px;height:320px}
   .ring-2{width:210px;height:210px}
-  .node{transform: rotate(var(--angle)) translate(145px) rotate(calc(-1 * var(--angle)))}
 }
