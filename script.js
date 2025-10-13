@@ -1,6 +1,4 @@
-// No necesitamos JS para las órbitas (son CSS).
-// Dejamos solo un pequeño scroll suave para los enlaces del header.
-
+// Scroll suave para los enlaces del header.
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click', e=>{
     const id = a.getAttribute('href');
