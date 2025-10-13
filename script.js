@@ -1,14 +1,10 @@
-// Año en el footer
-document.getElementById('y').textContent = new Date().getFullYear();
+// año en footer
+document.getElementById('yy').textContent = new Date().getFullYear();
 
-// Scroll suave para anclas del menú
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    const id = a.getAttribute('href');
-    const el = document.querySelector(id);
-    if(el){
-      e.preventDefault();
-      el.scrollIntoView({behavior:'smooth', block:'start'});
-    }
-  });
+// Sin JS extra para el ecosistema: la animación es 100% CSS.
+// Si quieres pausar al pasar el mouse:
+const rings = document.querySelectorAll('.ring');
+rings.forEach(r => {
+  r.addEventListener('mouseenter', ()=> r.style.animationPlayState = 'paused');
+  r.addEventListener('mouseleave', ()=> r.style.animationPlayState = 'running');
 });
