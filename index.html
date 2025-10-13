@@ -16,9 +16,9 @@
 <body>
 
   <!-- Header fijo -->
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top">
+      <a class="brand" href="#top" aria-label="Inicio">
         <img src="assets/Logo_ECA.jpg" alt="Logo ECA">
         <div class="brand-text">
           <strong>Enrique Castillo & Asociados</strong>
@@ -26,7 +26,7 @@
         </div>
       </a>
 
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Principal">
         <a href="#ecosistema">Ecosistema</a>
         <a href="#gestiones">Gestiones</a>
         <a class="btn-primary" href="#contacto">Contacto</a>
@@ -36,22 +36,22 @@
 
   <main id="top">
     <!-- Hero / Sobre Enrique -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="sobre-enrique">
       <div class="container hero-grid">
         <div class="hero-media">
-          <img src="assets/Sobre_EnriqueCastillo.jpg" alt="Sobre Enrique Castillo">
+          <img src="assets/Sobre_EnriqueCastillo.jpg" alt="Sobre Enrique Castillo trabajando">
         </div>
 
         <div class="hero-copy">
-          <h1>Enrique Castillo — MBA / Contador Auditor</h1>
+          <h1 id="sobre-enrique">Enrique Castillo — MBA / Contador Auditor</h1>
           <p>
-            Profesional en Contabilidad, Finanzas, Administración e Impuestos para entornos globales, enfocado
-            en el cumplimiento normativo y la eficiencia financiera. Especializado en PCGA, NIIF y USGAAP
+            Profesional con experiencia en contabilidad, trabajando en entornos globales y cumpliendo normativas contables.
+            Especializado en PCGA, NIIF y USGAAP. Dedicado a ayudar a las empresas a lograr un crecimiento integral
+            y mejorar su gestión de negocios.
           </p>
           <p>
-            MBA en Negocios Internacionales y Contador Auditor adscrito al Colegio de Contadores de Chile. 
-            Experto en implementación de softwares ERP y la aplicación de normas internacionales de 
-            contabilidad, en constante actualización profesional.
+            Amplia formación académica: MBA en Negocios Internacionales, título de Contador Auditor, y cursos en finanzas
+            y recursos humanos. Adscrito al Colegio de Contadores de Chile.
           </p>
 
           <a class="btn-ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/in/castillovillalobos/">
@@ -62,40 +62,40 @@
     </section>
 
     <!-- Ecosistema -->
-    <section id="ecosistema" class="ecosystem">
+    <section id="ecosistema" class="ecosystem" aria-labelledby="ecosistema-title">
       <div class="container">
-        <h2>Nuestro Ecosistema de Gestión</h2>
+        <h2 id="ecosistema-title">Nuestro Ecosistema de Gestión</h2>
         <p class="sub">Capacidades clave orbitando sobre un centro de gobierno único, para una visión 360°.</p>
 
         <div class="orbit-card">
           <!-- Anillos -->
           <div class="rings">
-            <div class="ring ring-1"></div>
-            <div class="ring ring-2"></div>
+            <div class="ring ring-1" aria-hidden="true"></div>
+            <div class="ring ring-2" aria-hidden="true"></div>
           </div>
 
           <!-- Centro -->
-          <div class="core">
-            <img src="assets/Logo_ECA.jpg" alt="Logo ECA">
+          <div class="core" aria-hidden="true">
+            <img src="assets/Logo_ECA.jpg" alt="">
           </div>
 
-          <!-- Órbita (los data-angle definen la separación) -->
-          <div class="orbit" data-speed="0.06">
-            <div class="node" data-angle="10"><span>Comercial & Pagos</span></div>
-            <div class="node" data-angle="80"><span>Contabilidad & Fiscal</span></div>
-            <div class="node" data-angle="150"><span>Laboral & Previred</span></div>
-            <div class="node" data-angle="220"><span>Gestión Legal</span></div>
-            <div class="node" data-angle="290"><span>Gestión Administrativa</span></div>
-            <div class="node" data-angle="340"><span>Informática & N8N</span></div>
+          <!-- Órbita (chips siempre legibles) -->
+          <div class="orbit" data-speed="0.06" role="list">
+            <div class="node" data-angle="10"  role="listitem"><span>Comercial & Pagos</span></div>
+            <div class="node" data-angle="80"  role="listitem"><span>Contabilidad & Fiscal</span></div>
+            <div class="node" data-angle="150" role="listitem"><span>Laboral & Previred</span></div>
+            <div class="node" data-angle="220" role="listitem"><span>Gestión Legal</span></div>
+            <div class="node" data-angle="290" role="listitem"><span>Gestión Administrativa</span></div>
+            <div class="node" data-angle="340" role="listitem"><span>Informática & N8N</span></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Áreas de gestión -->
-    <section id="gestiones" class="gestiones">
+    <section id="gestiones" class="gestiones" aria-labelledby="gestiones-title">
       <div class="container">
-        <h2>Áreas de Gestión</h2>
+        <h2 id="gestiones-title">Áreas de Gestión</h2>
 
         <div class="grid-gestiones">
           <article class="card">
@@ -175,9 +175,9 @@
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="contacto">
+    <section id="contacto" class="contacto" aria-labelledby="contacto-title">
       <div class="container contacto-inner">
-        <h2>Contacto</h2>
+        <h2 id="contacto-title">Contacto</h2>
         <p>Escríbenos para evaluar tu caso y planificar una implementación segura.</p>
         <div class="cta-row">
           <a class="btn-primary" href="mailto:ecastillo@cozfc.cl">ecastillo@cozfc.cl</a>
@@ -197,4 +197,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
