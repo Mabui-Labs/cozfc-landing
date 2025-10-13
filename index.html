@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Enrique Castillo & Asociados — Consultoría</title>
   <meta name="description" content="Consultoría contable, legal, laboral y de automatización. Excelencia ejecutiva para operar y crecer con seguridad." />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/Coz_Favicon.png" />
 
   <!-- Tipografías -->
@@ -17,33 +15,40 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Fondo parallax -->
+  <!-- Fondo -->
   <div class="page-bg"></div>
   <div class="page-bg-overlay"></div>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
+      <a class="brand" href="#">
         <div class="brand-mark"></div>
         <div class="brand-copy">
           <strong>Enrique Castillo &amp; Asociados</strong>
           <span>Consultoría de alto impacto</span>
         </div>
-      </div>
+      </a>
       <nav class="main-nav">
         <a href="#ecosistema">Ecosistema</a>
         <a href="#gestiones">Gestiones</a>
-        <a class="btn-primary" href="#contacto">Contacto</a>
+        <a class="btn-primary" href="mailto:ecastillo@cozfc.cl">Contactar</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO / Sobre Enrique -->
+  <!-- WIDGET FLOTANTE DE CONTACTO (arriba derecha) -->
+  <aside class="contact-fab">
+    <a class="fab-btn email" href="mailto:ecastillo@cozfc.cl" title="Enviar correo">Email</a>
+    <a class="fab-btn ln" target="_blank" rel="noopener" href="https://www.linkedin.com/in/castillovillalobos/" title="Ver LinkedIn">LinkedIn</a>
+  </aside>
+
+  <!-- SOBRE ENRIQUE (hero superior) -->
   <section class="hero" id="sobre">
     <div class="container hero-grid">
       <div class="hero-media">
-        <img src="assets/Logo_ECA.jpg" alt="Enrique Castillo & Asociados" />
+        <!-- Imagen solicitada -->
+        <img src="assets/Sobre_EnriqueCastillo.jpg" alt="Sobre Enrique Castillo" />
       </div>
 
       <div class="hero-copy">
@@ -67,49 +72,51 @@
     </div>
   </section>
 
-  <!-- ECOSISTEMA (centro de la página) -->
+  <!-- ECOSISTEMA (centro, animado) -->
   <section class="ecosistema" id="ecosistema" aria-label="Ecosistema de gestión">
     <div class="container ecosys-wrap">
       <p class="ecosys-sub">Capacidades clave orbitando sobre un centro de gobierno único, para una visión 360°.</p>
 
       <div class="orbits">
-        <!-- centro -->
+        <!-- Centro -->
         <img class="center-logo" src="assets/Logo_ECA.jpg" alt="Enrique Castillo & Asociados" />
 
-        <!-- Anillos (con animación de órbita) -->
+        <!-- Anillos -->
         <div class="ring ring-1"></div>
         <div class="ring ring-2"></div>
         <div class="ring ring-3"></div>
 
-        <!-- Órbitas animadas con chips -->
+        <!-- Órbita 1 -->
         <div class="orbit orbit-1">
-          <a class="chip" style="--pos: 10deg">
+          <a class="chip" style="--pos: 20deg">
             <img src="assets/Gestion_Contable_Fiscal.jpg" alt="" />
             Contabilidad &amp; Fiscal
           </a>
-          <a class="chip" style="--pos: 190deg">
+          <a class="chip" style="--pos: 200deg">
             <img src="assets/Gestion_Legal.jpg" alt="" />
             Gestión Legal
           </a>
         </div>
 
+        <!-- Órbita 2 (sentido inverso) -->
         <div class="orbit orbit-2">
-          <a class="chip" style="--pos: 70deg">
+          <a class="chip" style="--pos: 85deg">
             <img src="assets/Gestion_Administrativa.jpg" alt="" />
             Gestión Administrativa
           </a>
-          <a class="chip" style="--pos: 250deg">
+          <a class="chip" style="--pos: 265deg">
             <img src="assets/Gestion_Comercial.jpg" alt="" />
             Comercial &amp; Pagos
           </a>
         </div>
 
+        <!-- Órbita 3 -->
         <div class="orbit orbit-3">
-          <a class="chip" style="--pos: 320deg">
+          <a class="chip" style="--pos: 330deg">
             <img src="assets/Gestion_Informatica.jpg" alt="" />
             Informática &amp; N8N
           </a>
-          <a class="chip" style="--pos: 140deg">
+          <a class="chip" style="--pos: 150deg">
             <img src="assets/Gestion_laboral.jpg" alt="" />
             Laboral &amp; Previred
           </a>
@@ -118,17 +125,17 @@
     </div>
   </section>
 
-  <!-- GESTIONES (sección final) -->
+  <!-- GESTIONES (al final) -->
   <section class="gestiones" id="gestiones">
     <div class="container">
-      <h2 class="h2">Gestiones</h2>
+      <h2 class="h2">Áreas de Gestión</h2>
       <div class="cards">
         <article class="card">
           <img src="assets/Gestion_Contable_Fiscal.jpg" alt="" />
           <h3>Gestión Contable y Fiscal</h3>
           <ul>
             <li>Contabilidad tributaria (balance y cierres)</li>
-            <li>Formulario 29 IVA ( confección, rectificativas, pagos )</li>
+            <li>Formulario 29 IVA (confección, rectificativas, pagos)</li>
             <li>Portal SII (modificaciones, peticiones admin)</li>
           </ul>
         </article>
@@ -182,18 +189,6 @@
             <li>Soporte remoto</li>
           </ul>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="contacto" id="contacto">
-    <div class="container">
-      <h2 class="h2">Contacto</h2>
-      <p>Escríbenos para evaluar tu caso y planificar una implementación segura.</p>
-      <div class="cta-row">
-        <a class="btn-primary" href="mailto:ecastillo@cozfc.cl">ecastillo@cozfc.cl</a>
-        <a class="btn-outline" target="_blank" rel="noopener" href="https://www.linkedin.com/in/castillovillalobos/">LinkedIn</a>
       </div>
     </div>
   </section>
