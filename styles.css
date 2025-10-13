@@ -14,7 +14,7 @@ html,body{height:100%}
 body{
   margin:0;
   color:var(--text);
-  font:400 16px/1.6 Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  font:400 16px/1.6 "Playfair Display",serif;
   background: radial-gradient(1200px 1200px at 50% -10%, #12202b 0%, var(--bg) 55%, #0b141b 100%);
   letter-spacing:.2px;
 }
@@ -36,6 +36,7 @@ body{
   padding:.72rem 1.05rem; border-radius:12px; text-decoration:none;
   transition:.25s ease; font-weight:600; letter-spacing:.2px;
   border:1px solid transparent;
+  font-family: "Playfair Display", serif;
 }
 .btn-primary{background:linear-gradient(180deg,#4895ff,#2a7ae6); color:#fff; box-shadow:0 8px 28px rgba(77,163,255,.18)}
 .btn-primary:hover{filter:brightness(1.08)}
@@ -54,7 +55,7 @@ body{
 .brand-title{font-weight:600}
 .brand-sub{color:var(--muted); font-size:.86rem}
 .main-nav{display:flex; gap:.7rem}
-.nav-link{color:#d7e6f5; padding:.45rem .65rem; border-radius:10px; text-decoration:none}
+.nav-link{color:#d7e6f5; padding:.45rem .65rem; border-radius:10px; text-decoration:none; font-family: "Playfair Display", serif;}
 .nav-link:hover{background:rgba(255,255,255,.08)}
 @media (max-width:720px){ .brand-sub{display:none} }
 
@@ -71,7 +72,7 @@ body{
 
 /* ---- ecosistema ---- */
 .ecosystem{padding:24px 0 8px}
-.section-note{color:var(--muted); margin:0 0 18px}
+.section-note{color:var(--muted); margin:0 0 18px; font-family: "Playfair Display", serif;}
 .orbit-wrap{
   position:relative; aspect-ratio: 16/8.8; border-radius:22px;
   background:linear-gradient(180deg, rgba(12,23,31,.55), rgba(9,17,24,.65));
@@ -90,7 +91,7 @@ body{
   background:radial-gradient(120px 120px at 50% 45%, #0f2230 0%, #0b1720 70%);
   box-shadow:0 20px 40px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.08);
 }
-.core img{width:72px; height:72px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,.25)}
+.core img{width:72px; height:72px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,.25); display: block; margin: 0 auto;}
 
 .orbit{position:absolute; inset:0; margin:auto; width:520px; height:520px}
 .spin{animation:spin 38s linear infinite}
@@ -105,6 +106,7 @@ body{
   display:inline-block; padding:.55rem .85rem; border-radius:999px;
   background:var(--pill); color:#e8f2fc; font-weight:600; white-space:nowrap;
   box-shadow:0 10px 18px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.12);
+  font-family: "Playfair Display", serif;
 }
 .counter-spin{transform: rotate(calc(-1 * var(--angle))); display:inline-block}
 
@@ -121,8 +123,8 @@ body{
 }
 .card-media img{width:100%; height:100%; object-fit:cover; display:block}
 .card-body{padding:12px}
-.card-title{margin:6px 0 8px; font-weight:700}
-.card-list{margin:0; padding-left:18px; color:#c9d8e6; font-size:.95rem}
+.card-title{margin:6px 0 8px; font-weight:700; font-family: "Playfair Display", serif;}
+.card-list{margin:0; padding-left:18px; color:#c9d8e6; font-size:.95rem; font-family: "Playfair Display", serif;}
 @media (max-width:900px){
   .grid-gestiones{grid-template-columns:1fr}
   .card{grid-template-columns: 120px 1fr}
@@ -132,5 +134,5 @@ body{
 .contact{padding:20px 0 54px}
 .contact-actions{display:flex; gap:.6rem; flex-wrap:wrap}
 .site-footer{border-top:1px solid var(--stroke); background:rgba(10,17,24,.6)}
-.footer-inner{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:16px 0; color:#bdd0df}
+.footer-inner{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:16px 0; color:#bdd0df; font-family: "Playfair Display", serif;}
 .footer-inner a{color:#eaf2ff; text-decoration:none}
