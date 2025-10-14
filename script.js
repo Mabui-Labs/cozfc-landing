@@ -1,43 +1,33 @@
-/* Órbita con tarjetas siempre legibles y ordenadas (desktop y móvil) */
+/* 
+  Orbitas más ordenadas:
+  - Seis chips con separación fija de 60° (definida en el HTML por --start)
+  - Misma velocidad para que mantengan distancia y no se solapen
+  - Todo lo demás (hover, links) está resuelto desde CSS
+*/
+
+/* En caso de necesitar recalcular radios en móviles por alto muy chico */
 (function () {
   const orbit = document.querySelector('.orbit');
+  const chips = [...document.querySelectorAll('.chip')];
   if (!orbit) return;
 
-  // velocidad base
-  function speedForWidth(w){
-    // un pelín más lento en móvil
-    return w < 768 ? 0.045 : 0.06;
-  }
-
-  let speed = speedForWidth(window.innerWidth);
-  const nodes = [...orbit.querySelectorAll('.node')];
-  const base = nodes.map(n => parseFloat(n.dataset.angle || 0));
-  let spin = 0;
-
-  function layout() {
-    const rect = orbit.getBoundingClientRect();
-    const radius = Math.min(rect.width, rect.height) / 2 - 90;
-
-    nodes.forEach((n, i) => {
-      const a = (base[i] + spin) * Math.PI / 180;
-      const x = radius * Math.cos(a);
-      const y = radius * Math.sin(a);
-      // Chip siempre "de frente" (sin rotación)
-      n.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+  const resize = () => {
+    const w = orbit.clientWidth;
+    // Mantiene radios con buena separación para no cruzarse
+    chips.forEach(ch => {
+      if (w < 480) {
+        ch.style.setProperty('--radius', '28%');
+        ch.style.setProperty('--time', '26s');
+      } else if (w < 720) {
+        ch.style.setProperty('--radius', '32%');
+        ch.style.setProperty('--time', '28s');
+      } else {
+        ch.style.setProperty('--radius', '36%');
+        ch.style.setProperty('--time', '30s');
+      }
     });
-  }
+  };
 
-  function tick() {
-    spin = (spin + speed) % 360;
-    layout();
-    requestAnimationFrame(tick);
-  }
-
-  // re-layout al redimensionar
-  window.addEventListener('resize', () => {
-    speed = speedForWidth(window.innerWidth);
-    layout();
-  });
-
-  requestAnimationFrame(tick);
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
 })();
