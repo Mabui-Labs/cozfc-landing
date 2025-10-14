@@ -1,7 +1,7 @@
 :root{
   --bg:#0b1620;
   --card:#101c29;
-  --card-ghost:rgba(255,255,255,.08);
+  --card-ghost:rgba(0,0,0,.30);
   --ring:rgba(255,255,255,.25);
   --text:#e8eef7;
   --muted:#a9b6c7;
