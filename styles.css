@@ -27,7 +27,7 @@ body{
 /* Header */
 .site-header{
   position:sticky;top:0;z-index:999;
-  background: linear-gradient(180deg, rgba(10,15,22,.9), rgba(10,15,22,.55));
+  background: linear-gradient(180deg, rgba(12,20,30,75), rgba(12,20,30,.55));
   backdrop-filter: blur(6px);
   border-bottom:1px solid rgba(255,255,255,.12);
 }
