@@ -16,7 +16,7 @@
 
   function layout() {
     const rect = orbit.getBoundingClientRect();
-    const radius = Math.min(rect.width, rect.height) / 2 - 70;
+    const radius = Math.min(rect.width, rect.height) / 2 - 90;
 
     nodes.forEach((n, i) => {
       const a = (base[i] + spin) * Math.PI / 180;
