@@ -1,43 +1,30 @@
-/* Órbita con tarjetas siempre legibles y ordenadas (desktop y móvil) */
-(function () {
-  const orbit = document.querySelector('.orbit');
-  if (!orbit) return;
+document.addEventListener('DOMContentLoaded', () => {
 
-  // velocidad base
-  function speedForWidth(w){
-    // un pelín más lento en móvil
-    return w < 768 ? 0.045 : 0.06;
+  // 1. Actualiza el año en el footer
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
   }
 
-  let speed = speedForWidth(window.innerWidth);
-  const nodes = [...orbit.querySelectorAll('.node')];
-  const base = nodes.map(n => parseFloat(n.dataset.angle || 0));
-  let spin = 0;
+  // 2. Animación de entrada para secciones al hacer scroll
+  const sections = document.querySelectorAll('.animated-section');
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
 
-  function layout() {
-    const rect = orbit.getBoundingClientRect();
-    const radius = Math.min(rect.width, rect.height) / 2 - 90;
-
-    nodes.forEach((n, i) => {
-      const a = (base[i] + spin) * Math.PI / 180;
-      const x = radius * Math.cos(a);
-      const y = radius * Math.sin(a);
-      // Chip siempre "de frente" (sin rotación)
-      n.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
     });
-  }
+  }, observerOptions);
 
-  function tick() {
-    spin = (spin + speed) % 360;
-    layout();
-    requestAnimationFrame(tick);
-  }
-
-  // re-layout al redimensionar
-  window.addEventListener('resize', () => {
-    speed = speedForWidth(window.innerWidth);
-    layout();
+  sections.forEach(section => {
+    observer.observe(section);
   });
 
-  requestAnimationFrame(tick);
-})();
+});
