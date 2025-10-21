@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Enrique Castillo & Asociados — Consultoría</title>
+  <title>Enrique Castillo & Asociados — Gestión contable, fiscal y administrativa</title>
 
-  <!-- Tipografías -->
+  <!-- Tipografías (Inter + Playfair) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -13,160 +13,119 @@
   <link rel="icon" href="assets/Coz_Favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body id="top">
 
   <!-- Header fijo -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="#top">
-        <!-- Ruta corregida: el repo usa JPG con mayúsculas -->
-        <img src="assets/Foto_Enrique.JPG" alt="Foto Enrique" />
+      <a class="brand" href="#top" aria-label="Inicio COZ Financial Consulting">
+        <img src="assets/Logo_CozFinancial.jpg" alt="COZ Financial Consulting" width="34" height="34" />
         <div class="brand-text">
-          <strong>Enrique Castillo & Asociados</strong>
+          <strong>COZ Financial Consulting</strong>
         </div>
       </a>
 
-      <nav class="main-nav">
-        <a class="chip" href="#ecosistema">Ecosistema</a>
+      <nav class="main-nav" aria-label="Principal">
         <a class="chip" href="#gestiones">Gestiones</a>
+        <a class="chip" href="#ecosistema">Ecosistema</a>
+        <a class="chip" href="#sobre-enrique">Sobre Enrique</a>
         <a class="chip" href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <!-- Hero / Sobre Enrique -->
-    <section class="hero">
+  <main>
+    <!-- Intro breve orientada a servicios -->
+    <section class="hero" aria-labelledby="tit-hero">
       <div class="container hero-grid">
-        <div class="hero-media">
-          <img src="assets/Sobre_EnriqueCastillo.jpg" alt="Sobre Enrique Castillo">
-        </div>
-
         <div class="hero-copy">
-          <h1>Enrique Castillo</h1>
-          <h1>MBA - Contador Auditor</h1>
-          <p>
-            Gestión Administrativa y Cumplimiento de Normativa Tributaria /
-            Contador Auditor con experiencia en PCGA, NIIF, USGAPP / 
-            Especializado en Administración de Empresas y Comercio Internacional
+          <h1 id="tit-hero">Gestión contable, fiscal y administrativa para operar sin sobresaltos</h1>
+          <p class="lead">
+            Implementamos y mantenemos tus procesos clave: contabilidad tributaria, cumplimiento SII, laboral/Previred,
+            soporte legal corporativo, gestión comercial y automatizaciones n8n/ERP.
           </p>
-          <p>
-            Adscrito al Colegio de Contadores de Chile.
-          </p>
-
-          <a class="btn-ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/in/castillovillalobos/">
-            Ver LinkedIn
-          </a>
+          <a class="btn-ghost" href="#contacto">Evaluar mi caso</a>
+        </div>
+        <div class="hero-media">
+          <img src="assets/Fondo_paginaweb1.jpg" alt="Operación y control financiero" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- Ecosistema -->
-    <section id="ecosistema" class="ecosystem">
+    <!-- Áreas de gestión (arriba, foco en servicios y problemas) -->
+    <section id="gestiones" class="gestiones" aria-labelledby="tit-gestiones">
       <div class="container">
-        <h2>Nuestro Ecosistema de Gestión</h2>
-        <p class="sub">Capacidades clave orbitando sobre un Centro de Gobierno único, para una Visión 360°.</p>
-
-        <div class="orbit-card">
-          <!-- Anillos -->
-          <div class="rings">
-            <div class="ring ring-1"></div>
-            <div class="ring ring-2"></div>
-          </div>
-
-          <!-- Centro -->
-          <div class="core">
-            <img src="assets/Logo_ECA.jpg" alt="Logo ECA">
-          </div>
-
-          <!-- Órbita (los data-angle definen la separación) -->
-          <div class="orbit" data-speed="0.06">
-            <div class="node" data-angle="10"><span>Comercial & Pagos</span></div>
-            <div class="node" data-angle="80"><span>Contabilidad & Fiscal</span></div>
-            <div class="node" data-angle="150"><span>Laboral & Imposiciones</span></div>
-            <div class="node" data-angle="220"><span>Gestión Legal</span></div>
-            <div class="node" data-angle="290"><span>Gestión Administrativa</span></div>
-            <div class="node" data-angle="340"><span>Informática & N8N</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Áreas de gestión -->
-    <section id="gestiones" class="gestiones">
-      <div class="container">
-        <h2>Áreas de Gestión</h2>
+        <h2 id="tit-gestiones">Áreas de Gestión</h2>
 
         <div class="grid-gestiones">
           <article class="card">
-            <img src="assets/Gestion_Contable_Fiscal.jpg" alt="Gestión contable y fiscal">
+            <img src="assets/Gestion_Contable_Fiscal.jpg" alt="Gestión contable y fiscal" loading="lazy">
             <div class="card-body">
-              <h3>Gestión Contable y Fiscal</h3>
+              <h3>Contable & Fiscal</h3>
               <ul>
                 <li>Contabilidad tributaria (balance tributario).</li>
-                <li>Formulario 29 IVA (confección, rectificativas).</li>
-                <li>ISR Formulario 22 Renta anual.</li>
+                <li>F29 IVA (confección y rectificativas).</li>
+                <li>Renta anual F22 / DDJJ relacionadas.</li>
               </ul>
             </div>
           </article>
 
           <article class="card">
-            <img src="assets/Gestion_Administrativa.jpg" alt="Gestión administrativa">
+            <img src="assets/Gestion_Administrativa.jpg" alt="Gestión administrativa" loading="lazy">
             <div class="card-body">
-              <h3>Gestión Administrativa</h3>
+              <h3>Administrativa</h3>
               <ul>
-                <li>Trámites municipales, Seremi Salud, INAPI.</li>
-                <li>Reportes, costos y actualizaciones.</li>
+                <li>Trámites municipales, Seremi de Salud, INAPI.</li>
+                <li>Reportes, costos y control documental.</li>
                 <li>Pagos y coordinación con especialistas.</li>
               </ul>
             </div>
           </article>
 
           <article class="card">
-            <img src="assets/Gestion_Legal.jpg" alt="Gestión legal">
+            <img src="assets/Gestion_Legal.jpg" alt="Gestión legal" loading="lazy">
             <div class="card-body">
-              <h3>Gestión Legal</h3>
+              <h3>Legal Corporativa</h3>
               <ul>
-                <li>Constitución y modificaciones de empresas.</li>
-                <li>RES (libro de acciones, actas, Juntas).</li>
-                <li>Consultoria en Derecho Civil y Laboral.</li>
+                <li>Constitución y modificaciones de sociedades.</li>
+                <li>RES: libro de acciones, actas, juntas.</li>
+                <li>Soporte civil y laboral de operación.</li>
               </ul>
             </div>
           </article>
 
           <article class="card">
-            <img src="assets/Gestion_Comercial.jpg" alt="Gestión comercial">
+            <img src="assets/Gestion_Comercial.jpg" alt="Gestión comercial" loading="lazy">
             <div class="card-body">
-              <h3>Gestión Comercial</h3>
+              <h3>Comercial & Pagos</h3>
               <ul>
-                <li>Marketing y diseño web.</li>
-                <li>Publicidad digital.</li>
-                <li>Implementación de Marketplaces.</li>
+                <li>Marketing y presencia web sobria.</li>
+                <li>Onboarding a marketplaces cuando aplica.</li>
+                <li>Medios de pago y conciliación.</li>
               </ul>
             </div>
           </article>
 
           <article class="card">
-            <img src="assets/Gestion_Informatica.jpg" alt="Gestión informática">
+            <img src="assets/Gestion_Informatica.jpg" alt="Gestión informática" loading="lazy">
             <div class="card-body">
-              <h3>Gestión Informática</h3>
+              <h3>Informática & Automatización</h3>
               <ul>
-                <li>Implementación ERP / asistencia remota.</li>
-                <li>Automatizaciones con N8N.</li>
+                <li>Implementación ERP y asistencia remota.</li>
+                <li>Automatizaciones con n8n / integraciones.</li>
                 <li>Soporte y auditorías técnicas.</li>
               </ul>
             </div>
           </article>
 
-          <!-- Laboral (ruta SIN acento) -->
           <article class="card">
-            <img src="assets/Gestion_laboral.jpg" alt="Gestión laboral">
+            <img src="assets/Gestion_laboral.jpg" alt="Gestión laboral y previsión" loading="lazy">
             <div class="card-body">
-              <h3>Gestión Laboral</h3>
+              <h3>Laboral & Previred</h3>
               <ul>
-                <li>Liquidaciones y pago Previred.</li>
-                <li>Recibos y vacaciones.</li>
-                <li>Libro de asistencia / contratos / cartas.</li>
+                <li>Liquidaciones y pago de imposiciones.</li>
+                <li>Vacaciones, licencias y certificados.</li>
+                <li>Contratos, anexos y cartas.</li>
               </ul>
             </div>
           </article>
@@ -174,26 +133,84 @@
       </div>
     </section>
 
+    <!-- Ecosistema (luego de gestiones) -->
+    <section id="ecosistema" class="ecosystem" aria-labelledby="tit-ecosistema">
+      <div class="container">
+        <h2 id="tit-ecosistema">Ecosistema de Gestión</h2>
+        <p class="sub">Capacidades coordinadas alrededor de un Centro de Gobierno único.</p>
+
+        <div class="orbit-card">
+          <div class="rings">
+            <div class="ring ring-1" aria-hidden="true"></div>
+            <div class="ring ring-2" aria-hidden="true"></div>
+          </div>
+
+          <div class="core" aria-label="Centro de gobierno">
+            <img src="assets/Logo_ECA.jpg" alt="ECA Centro de Gobierno" width="64" height="64">
+          </div>
+
+          <div class="orbit" data-speed="0.06">
+            <div class="node" data-angle="10"><span>Comercial & Pagos</span></div>
+            <div class="node" data-angle="80"><span>Contabilidad & Fiscal</span></div>
+            <div class="node" data-angle="150"><span>Laboral & Previred</span></div>
+            <div class="node" data-angle="220"><span>Gestión Legal</span></div>
+            <div class="node" data-angle="290"><span>Gestión Administrativa</span></div>
+            <div class="node" data-angle="340"><span>Informática & n8n</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Enrique (breve) -->
+    <section id="sobre-enrique" class="sobre">
+      <div class="container sobre-inner">
+        <div class="sobre-media">
+          <img src="assets/Foto_Enrique.JPG" alt="Enrique Castillo" loading="lazy">
+        </div>
+        <div class="sobre-copy">
+          <h2>Sobre Enrique</h2>
+          <p>
+            Contador Auditor y MBA, experiencia en PCGA, NIIF y USGAAP. Trabajo con
+            foco operativo y cumplimiento: lo necesario para que tu negocio funcione
+            bien y sin fricciones.
+          </p>
+          <div class="cta-row">
+            <a class="btn-chip" target="_blank" rel="noopener" href="https://www.linkedin.com/in/castillovillalobos/">LinkedIn</a>
+            <a class="btn-chip" href="#contacto">Escríbeme</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contacto -->
-    <section id="contacto" class="contacto">
+    <section id="contacto" class="contacto" aria-labelledby="tit-contacto">
       <div class="container contacto-inner">
-        <h2>Contacto</h2>
-        <p>Escríbenos para evaluar tu caso y planificar una implementación segura.</p>
+        <h2 id="tit-contacto">Contacto</h2>
+        <p>Cuéntanos tu situación y coordinamos el siguiente paso.</p>
         <div class="cta-row">
-          <a class="btn-chip" href="mailto:ecastillo@cozfc.cl">Correo</a>
+          <a class="btn-chip" href="mailto:ecastillo@cozfc.cl">Correo: ecastillo@cozfc.cl</a>
           <a class="btn-chip" target="_blank" rel="noopener" href="https://www.linkedin.com/in/castillovillalobos/">LinkedIn</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <span>© 2025 Enrique Castillo & Asociados</span>
-      <span>Tecnología by <a target="_blank" rel="noopener" href="https://mabui.cl">mabui.cl</a></span>
+  <!-- Footer con sitios oficiales -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <span>© 2025 COZ Financial Consulting</span>
+      <nav aria-label="Sitios oficiales">
+        <ul class="links-oficiales">
+          <li><a target="_blank" rel="noopener" href="https://seremi.gob.cl/">Seremi</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.sii.cl/">SII</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.previred.com/">Previred</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.dt.gob.cl/">DT</a></li>
+        </ul>
+      </nav>
+      <span class="by">Tecnología por <a target="_blank" rel="noopener" href="https://mabui.cl">mabui.cl</a></span>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
