@@ -1,15 +1,14 @@
-/* Órbita con tarjetas siempre legibles y ordenadas (desktop y móvil) */
+/* Órbita accesible, eficiente y adaptada a tamaños */
 (function () {
   const orbit = document.querySelector('.orbit');
   if (!orbit) return;
 
-  // velocidad base
-  function speedForWidth(w){
-    // un pelín más lento en móvil
-    return w < 768 ? 0.045 : 0.06;
-  }
+  const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (mediaQuery.matches) return; // respeta usuarios sin animaciones
 
+  function speedForWidth(w){ return w < 768 ? 0.045 : 0.06; }
   let speed = speedForWidth(window.innerWidth);
+
   const nodes = [...orbit.querySelectorAll('.node')];
   const base = nodes.map(n => parseFloat(n.dataset.angle || 0));
   let spin = 0;
@@ -22,7 +21,6 @@
       const a = (base[i] + spin) * Math.PI / 180;
       const x = radius * Math.cos(a);
       const y = radius * Math.sin(a);
-      // Chip siempre "de frente" (sin rotación)
       n.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
     });
   }
@@ -33,7 +31,6 @@
     requestAnimationFrame(tick);
   }
 
-  // re-layout al redimensionar
   window.addEventListener('resize', () => {
     speed = speedForWidth(window.innerWidth);
     layout();
