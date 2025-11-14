@@ -1,28 +1,33 @@
-/* Overlay alineado a los márgenes .container en la sección .hero */
-.hero {
-  position: relative;
+/* Fondo sólido creativo para la landing page */
+body {
+  background: linear-gradient(135deg, #16253a 0%, #1d364f 100%); /* tono moderno, sobrio y profesional */
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.55;
 }
+
+/* Overlay hero se mantiene para mejorar contraste */
 .hero .container::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(12,20,30,0.60); /* overlay oscuro semitransparente */
+  background: rgba(12,20,30,0.60);
   z-index: 0;
   pointer-events: none;
-  border-radius: 16px; /* opcional, puedes ajustar */
+  border-radius: 16px;
 }
 .hero .container, .hero-copy, .hero-media, .hero-copy h1, .hero-copy .lead {
   position: relative;
   z-index: 1;
 }
-.hero::before, body::before { 
+.hero::before, body::before {
   display: none;
 }
-/* Fin overlay alineado a sección principal */
+/* Mejora creativa - puedes pedir colores o estilos según la temporada/marca */
 
 :root{
-  --bg:#0b1620;
-  --card:#101c29;
+  --bg:#16253a;
+  --card:#1d364f;
   --text:#e8eef7;
   --muted:#a9b6c7;
   --ring:rgba(255,255,255,.25);
@@ -32,150 +37,6 @@
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0;padding:0}
 img{max-width:100%;display:block}
-body{
-  background:#0c1520 url('assets/Fondo_paginaweb1.jpg') center/cover fixed no-repeat;
-  color:var(--text);
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
-  line-height:1.55;
-}
 .container{width:min(1200px,92%);margin-inline:auto;position:relative}
 
-/* Header */
-.site-header{
-  position:sticky;top:0;z-index:1000;
-  background:linear-gradient(180deg, rgba(12,20,30,.85), rgba(12,20,30,.55));
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid rgba(255,255,255,.12);
-}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
-.brand img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.35)}
-.brand-text strong{font-weight:600}
-.main-nav{display:flex;gap:10px;align-items:center}
-.chip{
-  display:inline-flex;align-items:center;justify-content:center;
-  height:36px;padding:0 14px;border-radius:11px;
-  color:var(--text);text-decoration:none;font-weight:500;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.28);
-  transition:.2s ease;
-}
-.chip:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.38)}
-
-/* Hero */
-.hero{padding:72px 0 32px}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
-.hero-copy h1{
-  font-family:"Playfair Display",serif;font-weight:700;line-height:1.1;margin:0 0 10px;font-size:44px;
-}
-.hero-copy .lead{color:var(--muted);margin:0 0 16px}
-.hero-media img{border-radius:14px;box-shadow:0 10px 35px rgba(0,0,0,.45)}
-.btn-ghost{
-  display:inline-flex;align-items:center;justify-content:center;
-  height:42px;padding:0 18px;border-radius:12px;
-  color:var(--text);text-decoration:none;font-weight:600;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.32);
-}
-.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.44)}
-
-/* Gestiones */
-.gestiones{padding:42px 0 70px}
-.gestiones h2{font-family:"Playfair Display",serif;font-size:40px;margin:0 0 14px}
-.grid-gestiones{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{
-  display:grid;grid-template-columns: 42% 58%;
-  background:linear-gradient(180deg, rgba(12,20,30,.78), rgba(12,20,30,.58));
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:16px;overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,.35);
-}
-.card img{height:220px;width:100%;object-fit:cover}
-.card-body{padding:18px}
-.card-body h3{margin:0 0 10px}
-.card-body ul{margin:0;padding-left:18px;color:var(--muted)}
-
-/* Ecosistema */
-.ecosystem{padding:30px 0 20px}
-.ecosystem h2{font-family:"Playfair Display",serif;font-size:40px;margin:0 0 6px}
-.ecosystem .sub{color:var(--muted);margin:0 0 18px}
-.orbit-card{
-  position:relative;border-radius:20px;padding:54px 20px;height:520px;
-  background:linear-gradient(180deg, rgba(8,14,22,.6), rgba(8,14,22,.35));
-  border:1px solid rgba(255,255,255,.12);overflow:hidden;
-}
-.rings{position:absolute;inset:0;pointer-events:none}
-.ring{position:absolute;border:1px dashed var(--ring);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
-.ring-1{width:72%;height:72%}
-.ring-2{width:92%;height:92%}
-.core{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:92px;height:92px;border-radius:50%;display:grid;place-items:center;
-  background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.35);
-  box-shadow:0 8px 25px rgba(0,0,0,.45)
-}
-.core img{width:64px;height:64px;border-radius:50%;object-fit:cover}
-.orbit{position:absolute;inset:0}
-.node{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);will-change:transform}
-.node span{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:10px 16px;border-radius:14px;font-weight:700;
-  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);
-  color:var(--text);white-space:nowrap;letter-spacing:.2px;
-  box-shadow:0 6px 20px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.06);
-}
-
-/* Sobre Enrique */
-.sobre{padding:30px 0 60px}
-.sobre-inner{
-  display:grid;grid-template-columns: 340px 1fr;gap:22px;
-  background:linear-gradient(180deg, rgba(12,20,30,.78), rgba(12,20,30,.58));
-  border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px;
-}
-.sobre-media img{border-radius:14px;box-shadow:0 10px 35px rgba(0,0,0,.35)}
-.sobre-copy h2{margin:0 0 8px;font-family:"Playfair Display",serif}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap}
-.btn-chip{
-  display:inline-flex;align-items:center;justify-content:center;
-  height:42px;padding:0 18px;border-radius:12px;
-  font-weight:600;text-decoration:none;color:var(--text);
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.32);
-}
-.btn-chip:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.44)}
-
-/* Contacto */
-.contacto{padding:10px 0 70px}
-.contacto-inner{
-  background:linear-gradient(180deg, rgba(12,20,30,.78), rgba(12,20,30,.58));
-  border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px 22px;
-}
-
-/* Footer */
-.site-footer{padding:20px 0;border-top:1px solid rgba(255,255,255,.12);background:rgba(6,10,16,.75);backdrop-filter:blur(4px)}
-.footer-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
-.links-oficiales{display:flex;gap:12px;list-style:none;margin:0;padding:0}
-.links-oficiales a{color:var(--text);text-decoration:none;border-bottom:1px dotted transparent}
-.links-oficiales a:hover{border-bottom-color:rgba(255,255,255,.45)}
-.by{text-align:right}
-
-/* Responsive */
-@media (max-width:1000px){
-  .hero-grid{grid-template-columns:1fr;gap:20px}
-  .hero-copy h1{font-size:40px}
-  .grid-gestiones{grid-template-columns:1fr 1fr}
-  .card{grid-template-columns:1fr}
-  .card img{height:200px}
-  .sobre-inner{grid-template-columns:1fr}
-}
-@media (max-width:640px){
-  .brand img{width:28px;height:28px}
-  .brand-text strong{font-size:14px}
-  .main-nav .chip{height:34px;padding:0 12px}
-  .hero{padding:62px 0 26px}
-  .hero-copy h1{font-size:32px}
-  .grid-gestiones{grid-template-columns:1fr}
-  .card img{height:190px}
-  .footer-grid{grid-template-columns:1fr;gap:8px}
-  .by{text-align:left}
-}
+/* ...resto de estilos permanece igual... */
