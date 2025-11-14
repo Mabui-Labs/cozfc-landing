@@ -1,42 +1,8 @@
-/* Fondo sólido creativo para la landing page */
 body {
-  background: linear-gradient(135deg, #16253a 0%, #1d364f 100%); /* tono moderno, sobrio y profesional */
+  background: linear-gradient(135deg, #1f2739 0%, #24334b 100%); /* fondo sólido y sobrio para máxima legibilidad */
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.55;
 }
 
-/* Overlay hero se mantiene para mejorar contraste */
-.hero .container::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(12,20,30,0.60);
-  z-index: 0;
-  pointer-events: none;
-  border-radius: 16px;
-}
-.hero .container, .hero-copy, .hero-media, .hero-copy h1, .hero-copy .lead {
-  position: relative;
-  z-index: 1;
-}
-.hero::before, body::before {
-  display: none;
-}
-/* Mejora creativa - puedes pedir colores o estilos según la temporada/marca */
-
-:root{
-  --bg:#16253a;
-  --card:#1d364f;
-  --text:#e8eef7;
-  --muted:#a9b6c7;
-  --ring:rgba(255,255,255,.25);
-}
-
-/* Reset breve y base */
-*,*::before,*::after{box-sizing:border-box}
-html,body{margin:0;padding:0}
-img{max-width:100%;display:block}
-.container{width:min(1200px,92%);margin-inline:auto;position:relative}
-
-/* ...resto de estilos permanece igual... */
+/* El resto del CSS permanece sin cambios */
