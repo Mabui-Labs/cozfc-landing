@@ -1,24 +1,24 @@
-/* Overlay exclusivo para la sección .hero */
+/* Overlay alineado a los márgenes .container en la sección .hero */
 .hero {
   position: relative;
 }
-.hero::before {
+.hero .container::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(12,20,30,0.60); /* overlay oscuro semitransparente */
   z-index: 0;
   pointer-events: none;
-  border-radius: 0.7em; /* opcional si deseas que siga el border-radius del container */
+  border-radius: 16px; /* opcional, puedes ajustar */
 }
-.hero-grid, .hero-copy, .hero-media, .hero-copy h1, .hero-copy .lead {
+.hero .container, .hero-copy, .hero-media, .hero-copy h1, .hero-copy .lead {
   position: relative;
   z-index: 1;
 }
-body::before {
+.hero::before, body::before { 
   display: none;
 }
-/* Fin mejora overlay seccion hero */
+/* Fin overlay alineado a sección principal */
 
 :root{
   --bg:#0b1620;
@@ -38,7 +38,7 @@ body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
   line-height:1.55;
 }
-.container{width:min(1200px,92%);margin-inline:auto}
+.container{width:min(1200px,92%);margin-inline:auto;position:relative}
 
 /* Header */
 .site-header{
