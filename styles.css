@@ -1,27 +1,24 @@
-/* Overlay uniforme para toda la página: mejora de legibilidad */
-body {
+/* Overlay exclusivo para la sección .hero */
+.hero {
   position: relative;
 }
-body::before {
+.hero::before {
   content: "";
-  position: fixed;
+  position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(12,20,30,0.60); /* overlay oscuro semitransparente general */
+  background: rgba(12,20,30,0.60); /* overlay oscuro semitransparente */
   z-index: 0;
   pointer-events: none;
+  border-radius: 0.7em; /* opcional si deseas que siga el border-radius del container */
 }
-body > * {
+.hero-grid, .hero-copy, .hero-media, .hero-copy h1, .hero-copy .lead {
   position: relative;
   z-index: 1;
 }
-/* Elimina overlay en .hero para evitar doble capa */
-.hero::before {
+body::before {
   display: none;
 }
-.hero-copy, .hero-copy h1, .hero-copy .lead {
-  z-index: 1;
-}
-/* Fin overlay uniforme */
+/* Fin mejora overlay seccion hero */
 
 :root{
   --bg:#0b1620;
