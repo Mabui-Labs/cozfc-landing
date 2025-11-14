@@ -1,19 +1,27 @@
-/* Mejora para legibilidad del texto en la hero section */
-.hero {
+/* Overlay uniforme para toda la página: mejora de legibilidad */
+body {
   position: relative;
 }
-.hero::before {
+body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(12,20,30,0.65); /* overlay oscuro semitransparente */
+  background: rgba(12,20,30,0.60); /* overlay oscuro semitransparente general */
   z-index: 0;
+  pointer-events: none;
 }
-.hero-copy, .hero-copy h1, .hero-copy .lead {
+body > * {
   position: relative;
   z-index: 1;
 }
-/* Fin mejora legibilidad */
+/* Elimina overlay en .hero para evitar doble capa */
+.hero::before {
+  display: none;
+}
+.hero-copy, .hero-copy h1, .hero-copy .lead {
+  z-index: 1;
+}
+/* Fin overlay uniforme */
 
 :root{
   --bg:#0b1620;
