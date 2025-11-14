@@ -1,3 +1,20 @@
+/* Mejora para legibilidad del texto en la hero section */
+.hero {
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(12,20,30,0.65); /* overlay oscuro semitransparente */
+  z-index: 0;
+}
+.hero-copy, .hero-copy h1, .hero-copy .lead {
+  position: relative;
+  z-index: 1;
+}
+/* Fin mejora legibilidad */
+
 :root{
   --bg:#0b1620;
   --card:#101c29;
