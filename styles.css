@@ -53,6 +53,24 @@ body{
 .chip:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.38)}
 
 /* Hero */
+.hero{
+  padding:80px 0 40px;
+  position: relative;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.80);
+  z-index:0;
+}
+
+/* Asegura que el contenido quede arriba del overlay */
+.hero > *{
+  position: relative;
+  z-index: 1;
+}
 .hero{padding:80px 0 40px}
 .hero-grid{display:grid;grid-template-columns: 460px 1fr;gap:28px;align-items:center}
 .hero-media img{border-radius:14px;box-shadow:0 10px 35px rgba(0,0,0,.45)}
