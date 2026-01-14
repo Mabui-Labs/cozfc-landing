@@ -35,7 +35,7 @@ body{
   display:flex;align-items:center;justify-content:space-between;
   min-height:66px;gap:16px;
 }
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+.brand{display:flex;align-items:center;gap:0;text-decoration:none;color:var(--text)}
 .brand img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.35)}
 .brand-text strong{font-weight:600}
 
