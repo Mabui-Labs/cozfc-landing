@@ -36,8 +36,16 @@ body{
   min-height:66px;gap:16px;
 }
 .brand{display:flex;align-items:center;gap:0;text-decoration:none;color:var(--text)}
-.brand img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.35)}
 .brand-text strong{font-weight:600}
+.header-title{
+  margin:0;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.2px;
+  color: rgba(255,255,255,.88);
+  line-height:1;
+  white-space:nowrap;
+}
 
 /* chips de navegación */
 .main-nav{display:flex;gap:10px;align-items:center}
