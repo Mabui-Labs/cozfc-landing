@@ -1,0 +1,64 @@
+/* Formulario Solicitud de Resolución Sanitaria — hereda variables y componentes de ../styles.css */
+.form-hero{padding:56px 0 18px;position:relative}
+.form-hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:0}
+.form-hero>*{position:relative;z-index:1}
+.form-hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:40px;line-height:1.1;margin:0 0 8px}
+.form-hero .sub{color:var(--muted);margin:0;max-width:900px}
+
+.form-wrap{padding:10px 0 70px}
+.panel{
+  background:linear-gradient(180deg, rgba(12,20,30,.86), rgba(12,20,30,.72));
+  border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px 22px 26px;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+fieldset{border:0;padding:0;margin:0 0 22px}
+legend{font-family:"Playfair Display",serif;font-size:22px;font-weight:600;margin:0 0 12px;padding:0}
+h4{margin:16px 0 8px;font-size:15px}
+.muted{color:var(--muted);font-weight:400;font-size:13px}
+.hint{color:var(--muted);font-size:13px;margin:4px 0 8px}
+label{display:block;font-size:14px;color:var(--text);margin:0 0 10px}
+input:not([type=checkbox]):not([type=radio]),select,textarea{
+  display:block;width:100%;margin-top:4px;padding:9px 11px;border-radius:10px;
+  color:var(--text);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);
+  font:inherit;font-size:14px;outline:none;transition:.2s ease;
+}
+input:focus,select:focus,textarea:focus{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.09)}
+select option{background:#101c29;color:#e8eef7}
+textarea{resize:vertical}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:4px 14px}
+.inline{margin-top:6px}
+.radios label,.checks label,.check{display:flex;align-items:flex-start;gap:10px;font-size:14px;margin:6px 0}
+.radios input,.checks input,.check input{margin-top:3px;accent-color:var(--brand)}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:2px 16px}
+.ants{display:grid;gap:8px}
+.ant{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:start;padding:10px 12px;border-radius:12px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12)}
+.ant .n{font-weight:700;color:var(--muted)}
+.ant .t{font-size:13.5px}
+.ant .d{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.ant select{margin:0;min-width:170px;padding:6px 9px;font-size:13px}
+.tag{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap;
+  background:rgba(46,103,255,.18);border:1px solid rgba(46,103,255,.5)}
+.notice{padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.3);color:var(--text);font-size:14px;margin-top:8px}
+.hidden{display:none !important}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+.cta-row{margin-top:14px}
+button.btn-chip{cursor:pointer;font:inherit}
+.btn-primary{background:rgba(46,103,255,.35);border-color:rgba(46,103,255,.8)}
+.btn-primary:hover{background:rgba(46,103,255,.5)}
+.btn-chip[disabled]{opacity:.6;cursor:wait}
+.err{border-color:#ff7b7b !important}
+#estado.error{color:#ffb3b3}
+
+@media (max-width:900px){
+  .grid-4{grid-template-columns:1fr 1fr}
+  .checks{grid-template-columns:1fr}
+  .form-hero h1{font-size:32px}
+}
+@media (max-width:640px){
+  .grid-2,.grid-4{grid-template-columns:1fr}
+  .ant{grid-template-columns:28px 1fr}
+  .ant select{grid-column:2}
+  .panel{padding:16px 14px 20px}
+}
