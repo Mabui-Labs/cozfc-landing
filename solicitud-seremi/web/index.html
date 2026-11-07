@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitud de Resolución Sanitaria — Enrique Castillo & Asociados</title>
+  <meta name="description" content="Formulario de evaluación para la Autorización Sanitaria de instalaciones de alimentos (SEREMI de Salud). Requisitos por tipo de instalación.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../assets/Coz_Favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="form.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <p class="header-title">Enrique Castillo & Asociados</p>
+      <nav class="main-nav">
+        <a class="chip" href="../../#soporte">Áreas de Soporte</a>
+        <a class="chip" href="../../#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="form-hero">
+      <div class="container">
+        <h1>Solicitud de Resolución Sanitaria</h1>
+        <p class="sub">Autorización de funcionamiento de instalación de alimentos · SEREMI de Salud. Elige tu tipo de instalación y el formulario te muestra los requisitos exactos que exige el portal. Si no lo tienes claro, déjanos tus datos y te orientamos.</p>
+      </div>
+    </section>
+
+    <section class="form-wrap">
+      <div class="container">
+        <form id="solicitud" class="panel" novalidate>
+          <input type="text" name="_hp" class="hp" tabindex="-1" autocomplete="off">
+
+          <!-- 1. Contacto -->
+          <fieldset>
+            <legend>1 · Contacto y empresa</legend>
+            <div class="grid-2">
+              <label>Nombre de contacto *<input name="contacto" required></label>
+              <label>Correo *<input type="email" name="correo" required></label>
+              <label>Teléfono / WhatsApp *<input name="telefono" required placeholder="+56 9 …"></label>
+              <label>Región del local *
+                <select name="region" required>
+                  <option value="Región de Los Lagos" selected>Región de Los Lagos</option>
+                  <option>Región de Arica y Parinacota</option><option>Región de Tarapacá</option><option>Región de Antofagasta</option><option>Región de Atacama</option><option>Región de Coquimbo</option><option>Región de Valparaíso</option><option>Región Metropolitana</option><option>Región de O'Higgins</option><option>Región del Maule</option><option>Región de Ñuble</option><option>Región del Biobío</option><option>Región de La Araucanía</option><option>Región de Los Ríos</option><option>Región de Aysén</option><option>Región de Magallanes</option>
+                </select></label>
+              <label>Comuna *<input name="comuna" required placeholder="Puerto Montt"></label>
+              <label>Dirección del local<input name="direccion" placeholder="Calle, número, local"></label>
+              <label>Razón social<input name="razon_social" placeholder="Nombre SpA / EIRL / persona natural"></label>
+              <label>RUT empresa<input name="rut" placeholder="76.123.456-7"></label>
+              <label>Nombre de fantasía<input name="fantasia"></label>
+              <label>Representante legal<input name="rep_legal" placeholder="Nombre y RUT"></label>
+            </div>
+            <label class="inline">¿El representante legal cuenta con ClaveÚnica?
+              <select name="clave_unica"><option>Sí</option><option>No</option><option>No sé</option></select></label>
+          </fieldset>
+
+          <!-- 2. Situación -->
+          <fieldset>
+            <legend>2 · Situación del local</legend>
+            <div class="radios">
+              <label><input type="radio" name="situacion" value="Local nuevo (aún no abre)" checked> Local nuevo (aún no abre)</label>
+              <label><input type="radio" name="situacion" value="Funcionando sin resolución (regularización)"> Funcionando sin resolución (regularización)</label>
+              <label><input type="radio" name="situacion" value="Tengo resolución y quiero modificarla / ampliarla"> Tengo resolución y quiero modificarla / ampliarla</label>
+              <label><input type="radio" name="situacion" value="Cambio de razón social / traslado"> Cambio de razón social / traslado</label>
+            </div>
+            <label class="inline">Plazo objetivo (apertura, fiscalización, patente)<input name="plazo" placeholder="Ej.: diciembre 2026"></label>
+          </fieldset>
+
+          <!-- 3. Tipo de instalación -->
+          <fieldset>
+            <legend>3 · Tipo de instalación (según portal SEREMI en Línea)</legend>
+            <label>Selecciona el tipo que mejor describe tu negocio *
+              <select name="tipo" id="tipo" required>
+                <option value="">— Elegir —</option>
+              </select></label>
+            <p class="hint" id="tipo-nota"></p>
+
+            <div id="bloque-tipo" class="hidden">
+              <h4>Fines que marcarás en el portal <span class="muted">(elige todos los que apliquen)</span></h4>
+              <div id="fines" class="checks"></div>
+
+              <h4>Datos que el portal exige para este tipo</h4>
+              <div id="atributos" class="grid-2"></div>
+
+              <h4>Antecedentes que exige SEREMI para este tipo <span class="muted">(en el orden del portal)</span></h4>
+              <p class="hint">Marca lo que ya tienes. Los documentos indicados como <b>“lo elabora el Estudio”</b> forman parte de nuestro servicio.</p>
+              <div id="antecedentes" class="ants"></div>
+            </div>
+
+            <div id="bloque-contra" class="hidden notice">
+              Este tipo de instalación se evalúa en reunión. Cuéntanos el caso en el campo de comentarios y te contactamos.
+            </div>
+            <div id="bloque-nose" class="hidden notice">
+              Sin problema: describe brevemente qué vendes o elaboras, cómo (al paso, mesas, delivery) y dónde, y te decimos qué tipo de instalación corresponde y qué necesitas.
+            </div>
+          </fieldset>
+
+          <!-- 4. Local e infraestructura -->
+          <fieldset id="fs-local" class="hidden">
+            <legend>4 · Local e infraestructura</legend>
+            <div class="grid-2">
+              <label>Tenencia<select name="tenencia"><option>Arrendado</option><option>Propio</option><option>Comodato / cedido</option></select></label>
+              <label>¿Comparte inmueble con una vivienda?<select name="comparte_vivienda"><option>No</option><option>Sí, con vivienda del propietario</option><option>Sí, con otra vivienda</option></select></label>
+              <label>Superficie habilitada para el negocio (m²)<input name="m2" inputmode="decimal" placeholder="Ej.: 62"></label>
+              <label>Número de pisos del local<select name="pisos"><option>1</option><option>2</option><option>3 o más</option></select></label>
+              <label>Agua potable<select name="agua"><option>Red pública (boleta a nombre del inmueble)</option><option>Particular (pozo / APR)</option><option>No sé</option></select></label>
+              <label>Alcantarillado<select name="alcantarillado"><option>Red pública</option><option>Particular (fosa / planta)</option><option>No sé</option></select></label>
+              <label>Permiso / patente municipal<select name="municipal"><option>Tengo patente o informe DOM</option><option>En trámite</option><option>No lo he iniciado</option><option>No sé</option></select></label>
+              <label>Horario de funcionamiento<select name="horario"><option>Diurno</option><option>Nocturno</option><option>Diurno y nocturno</option></select></label>
+            </div>
+            <h4>Colindantes <span class="muted">(qué hay al lado del local)</span></h4>
+            <div class="grid-4">
+              <label>Norte<select name="col_norte"><option>Vivienda</option><option>Local comercial</option><option>Calle</option><option>Sitio eriazo</option><option>Otro</option></select></label>
+              <label>Oriente<select name="col_oriente"><option>Vivienda</option><option>Local comercial</option><option>Calle</option><option>Sitio eriazo</option><option>Otro</option></select></label>
+              <label>Poniente<select name="col_poniente"><option>Vivienda</option><option>Local comercial</option><option>Calle</option><option>Sitio eriazo</option><option>Otro</option></select></label>
+              <label>Sur<select name="col_sur"><option>Vivienda</option><option>Local comercial</option><option>Calle</option><option>Sitio eriazo</option><option>Otro</option></select></label>
+            </div>
+            <label>Recintos del local y medidas aproximadas<textarea name="recintos" rows="3" placeholder="Ej.: Cocina caliente 3x4,4 m; cuarto frío 4,6x4,5 m; recepción/caja 2,7x4,7 m; baño personal; bodega secos en 2° piso…"></textarea></label>
+            <div class="grid-4">
+              <label>Refrigeradores (n°)<input name="refrigeradores" inputmode="numeric"></label>
+              <label>Congeladores (n°)<input name="congeladores" inputmode="numeric"></label>
+              <label>Campanas extractoras (n°)<input name="campanas" inputmode="numeric"></label>
+              <label>Equipos de calor<input name="equipos_calor" placeholder="cocina, freidora, horno…"></label>
+            </div>
+            <div class="grid-4">
+              <label>Baño del personal<select name="bano_personal"><option>Sí (mixto)</option><option>Sí (hombres / mujeres)</option><option>No</option></select></label>
+              <label>WC público mujeres (n°)<input name="wc_publico_m" inputmode="numeric" placeholder="0"></label>
+              <label>WC público hombres (n°)<input name="wc_publico_h" inputmode="numeric" placeholder="0"></label>
+              <label>Lavamanos en zona de elaboración<select name="lavamanos"><option>Sí</option><option>No</option><option>No sé</option></select></label>
+            </div>
+          </fieldset>
+
+          <!-- 5. Operación -->
+          <fieldset id="fs-operacion" class="hidden">
+            <legend>5 · Operación</legend>
+            <div class="grid-4">
+              <label>Personal mujeres (n°)<input name="personal_f" inputmode="numeric"></label>
+              <label>Personal hombres (n°)<input name="personal_m" inputmode="numeric"></label>
+              <label>Control de plagas<select name="plagas"><option>Tengo empresa y certificado vigente</option><option>Tengo empresa sin certificado</option><option>No tengo</option></select></label>
+              <label>Aceite de fritura usado<select name="aceite"><option>No uso freidora</option><option>Lo retira empresa autorizada</option><option>Sin retiro definido</option></select></label>
+            </div>
+            <label>Productos que elaboras o vendes y modalidad (al paso, mesas, delivery, retiro)<textarea name="productos" rows="3" placeholder="Ej.: sushi, hand rolls y pollo frito; venta al paso y delivery por apps…"></textarea></label>
+            <label>Residuos: ¿dónde está el contenedor de basura externo?<input name="residuos" placeholder="Ej.: contenedor municipal a 50 m, misma calle"></label>
+          </fieldset>
+
+          <!-- 6. Cierre -->
+          <fieldset>
+            <legend id="legend-cierre">6 · Comentarios y envío</legend>
+            <label>Cuéntanos tu caso <span class="muted">(obligatorio si no elegiste tipo de instalación)</span><textarea name="comentarios" id="comentarios" rows="4"></textarea></label>
+            <label>Enlace a fotos, croquis o documentos (Drive, WeTransfer) <span class="muted">opcional</span><input name="enlace_archivos" placeholder="https://…"></label>
+            <label class="check"><input type="checkbox" name="acepta" required> Autorizo el uso de estos datos para ser contactado por Enrique Castillo & Asociados respecto de esta solicitud (Ley 19.628). *</label>
+            <div class="cta-row">
+              <button type="submit" class="btn-chip btn-primary" id="enviar">Enviar solicitud</button>
+              <a class="btn-chip" href="../../">Volver al sitio</a>
+            </div>
+            <p class="hint" id="estado"></p>
+          </fieldset>
+        </form>
+
+        <div id="gracias" class="panel hidden">
+          <h2>Solicitud recibida</h2>
+          <p>Gracias. En un plazo de 48 horas hábiles te enviaremos el diagnóstico, la lista de pendientes y la cotización.</p>
+          <p class="muted">Región de Los Lagos: ingreso presencial en SEREMI Puerto Montt o en línea. Otras regiones: 100 % en línea con ClaveÚnica.</p>
+          <div class="cta-row"><a class="btn-chip" href="../../">Volver al sitio</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>®Adscrito al Colegio de Contadores de Chile.</span>
+      <span>© 2025 Mabui Webhook.</span>
+    </div>
+  </footer>
+
+  <script src="catalogo.js"></script>
+  <script src="config.js"></script>
+  <script src="form.js"></script>
+</body>
+</html>
