@@ -221,3 +221,10 @@ body{
   .grid-gestiones{grid-template-columns:1fr}
   .card img{height:190px}
 }
+
+/* Menú superior en pantallas angostas: los chips pasan a una segunda fila sin cortar el texto */
+@media (max-width:900px){
+  .header-inner{flex-wrap:wrap;padding:8px 0;row-gap:8px}
+  .main-nav{flex-wrap:wrap;gap:8px}
+  .main-nav .chip{white-space:nowrap}
+}
