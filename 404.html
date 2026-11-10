@@ -12,7 +12,10 @@
       var p = location.pathname.toLowerCase().replace(/\/+$/, '');
       var routes = {
         '/solicitud-seremi': '/solicitud-seremi/',
-        '/solicitud-contrato': '/solicitud-contrato/'
+        '/solicitud-contrato': '/solicitud-contrato/',
+        '/calculadora-honorarios': '/calculadora-honorarios/',
+        '/calculadora': '/calculadora-honorarios/',
+        '/honorarios': '/calculadora-honorarios/'
       };
       if (routes[p] && routes[p] !== location.pathname) location.replace(routes[p] + location.search + location.hash);
     })();

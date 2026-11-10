@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora de Boleta de Honorarios 2026 — Enrique Castillo & Asociados</title>
+  <meta name="description" content="Calcula el monto bruto, la retención y el líquido de una boleta de honorarios en Chile con la tasa vigente (15,25% en 2026, Ley 21.133). Bruto a líquido y líquido a bruto.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/Coz_Favicon.png" type="image/png">
+  <link rel="stylesheet" href="../styles.css?v=20261107" />
+  <style>
+    body{background-image:url('../assets/Fondo_paginaweb1.jpg')}
+    .calc{padding:60px 0 50px}
+    .calc h1{font-family:"Playfair Display",serif;font-size:40px;margin:0 0 6px}
+    .calc .sub{color:var(--muted);margin:0 0 22px}
+    .calc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
+    .panel{background:linear-gradient(180deg, rgba(12,20,30,.78), rgba(12,20,30,.58));border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px 22px}
+    .seg{display:inline-flex;border:1px solid rgba(255,255,255,.28);border-radius:11px;overflow:hidden;margin-bottom:18px}
+    .seg button{all:unset;cursor:pointer;padding:9px 16px;font-weight:500;color:var(--text);background:rgba(255,255,255,.06)}
+    .seg button[aria-pressed="true"]{background:rgba(255,255,255,.18);font-weight:600}
+    label{display:block;color:var(--muted);font-size:14px;margin:12px 0 6px}
+    .field{display:flex;align-items:center;gap:8px}
+    .field span{color:var(--muted);font-weight:600}
+    input[type=text],select{width:100%;height:46px;border-radius:12px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.06);color:var(--text);font:inherit;font-size:20px;font-weight:600;padding:0 14px;outline:none}
+    input[type=text]:focus,select:focus{border-color:rgba(255,255,255,.55)}
+    select{font-size:16px;font-weight:500}
+    select option{color:#0b1620}
+    .results{display:grid;gap:12px;margin-top:6px}
+    .res{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)}
+    .res small{color:var(--muted);display:block;font-size:13px}
+    .res strong{font-size:24px;white-space:nowrap}
+    .res.total{background:rgba(46,103,255,.18);border-color:rgba(46,103,255,.45)}
+    .note{color:var(--muted);font-size:14px;margin-top:16px}
+    .tabla{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+    .tabla th,.tabla td{padding:7px 8px;border-bottom:1px solid rgba(255,255,255,.1);text-align:left}
+    .tabla th{color:var(--muted);font-weight:500}
+    .tabla tr.now td{font-weight:600;color:#fff}
+    .faq h3{font-size:16px;margin:16px 0 4px}
+    .faq p{color:var(--muted);margin:0;font-size:14px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    @media (max-width:860px){.calc-grid{grid-template-columns:1fr}.calc h1{font-size:30px}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <p class="header-title">Enrique Castillo & Asociados</p>
+      <nav class="main-nav">
+        <a class="chip" href="/">Inicio</a>
+        <a class="chip" href="/#tramites">Trámites Online</a>
+        <a class="chip" href="/#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="calc">
+      <div class="container">
+        <h1>Calculadora de Boleta de Honorarios</h1>
+        <p class="sub">Bruto, retención y líquido con la tasa vigente según la Ley 21.133. Año 2026: retención 15,25%.</p>
+
+        <div class="calc-grid">
+          <div class="panel">
+            <div class="seg" role="group" aria-label="Tipo de cálculo">
+              <button type="button" id="modeBruto" aria-pressed="true">Tengo el monto BRUTO</button>
+              <button type="button" id="modeLiquido" aria-pressed="false">Quiero recibir un LÍQUIDO</button>
+            </div>
+
+            <label for="monto" id="montoLabel">Monto bruto de la boleta</label>
+            <div class="field"><span>$</span><input type="text" id="monto" inputmode="numeric" placeholder="1.000.000" autocomplete="off"></div>
+
+            <label for="anio">Año de emisión (tasa de retención)</label>
+            <select id="anio"></select>
+
+            <div class="results" id="results">
+              <div class="res"><div>Monto bruto<small>Total honorarios de la boleta</small></div><strong id="rBruto">$0</strong></div>
+              <div class="res"><div>Retención <span id="rTasa">15,25%</span><small>Impuesto retenido (Art. 74 N°2 LIR)</small></div><strong id="rRet">$0</strong></div>
+              <div class="res total"><div>Monto líquido<small>Lo que recibe el profesional</small></div><strong id="rLiq">$0</strong></div>
+            </div>
+
+            <div class="actions">
+              <button type="button" class="btn-chip" id="copiar">Copiar resultado</button>
+              <a class="btn-chip" href="/#contacto">¿Dudas? Contáctanos</a>
+            </div>
+            <p class="note" id="nota"></p>
+          </div>
+
+          <div class="panel faq">
+            <h3 style="margin-top:0">Tasas de retención por año (Ley 21.133)</h3>
+            <table class="tabla" id="tablaTasas"><thead><tr><th>Año</th><th>Retención</th><th>Factor líquido</th></tr></thead><tbody></tbody></table>
+
+            <h3>¿Quién retiene y paga al SII?</h3>
+            <p>Si la boleta se emite a una empresa o institución (contribuyente de 1ª categoría obligado a retener), ella descuenta la retención y la declara en su F29. Si se emite a una persona natural sin obligación de retener, el propio profesional debe enterar el porcentaje como PPM en su F29 del mes siguiente.</p>
+
+            <h3>¿La retención es el impuesto definitivo?</h3>
+            <p>No. Es un pago provisional: en la Operación Renta de abril se calcula el Impuesto Global Complementario y las cotizaciones previsionales del independiente; la retención se imputa a ambos y la diferencia se devuelve o se paga.</p>
+
+            <h3>Redondeo</h3>
+            <p>Los montos se redondean al peso, igual que la boleta electrónica del SII. En "líquido a bruto" el bruto se ajusta para que el líquido coincida exactamente con el valor ingresado.</p>
+
+            <p class="note">Herramienta referencial de Enrique Castillo & Asociados · Estudio de Consultoría Empresarial · www.cozfc.cl. Para la emisión oficial utiliza el portal del SII. Tasas verificadas en sii.cl (noviembre 2026).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>®Adscrito al Colegio de Contadores de Chile.</span>
+      <span>© 2025 Mabui Webhook.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Tasas de retención Ley 21.133 (Art. 74 N°2 LIR). 2028 en adelante: 17% permanente.
+    const TASAS = {2019:10, 2020:10.75, 2021:11.5, 2022:12.25, 2023:13, 2024:13.75, 2025:14.5, 2026:15.25, 2027:16, 2028:17};
+    const ANIO_ACTUAL = 2026;
+    let modo = 'bruto';
+
+    const $ = id => document.getElementById(id);
+    const fmt = n => '$' + Math.round(n).toLocaleString('es-CL');
+    const pct = t => t.toLocaleString('es-CL', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '%';
+    const parse = s => Number(String(s).replace(/[^\d]/g, '')) || 0;
+
+    // Selector de año
+    Object.keys(TASAS).sort((a,b)=>b-a).forEach(y => {
+      const o = document.createElement('option');
+      o.value = y; o.textContent = y + ' — ' + pct(TASAS[y]) + (y == 2028 ? ' (y siguientes)' : '');
+      if (Number(y) === ANIO_ACTUAL) o.selected = true;
+      $('anio').appendChild(o);
+    });
+
+    // Tabla
+    const tb = $('tablaTasas').querySelector('tbody');
+    Object.keys(TASAS).sort((a,b)=>b-a).forEach(y => {
+      const tr = document.createElement('tr');
+      if (Number(y) === ANIO_ACTUAL) tr.className = 'now';
+      tr.innerHTML = `<td>${y}${y == 2028 ? ' en adelante' : ''}</td><td>${pct(TASAS[y])}</td><td>${(1 - TASAS[y]/100).toLocaleString('es-CL',{minimumFractionDigits:4,maximumFractionDigits:4})}</td>`;
+      tb.appendChild(tr);
+    });
+
+    function calcular() {
+      const tasa = TASAS[$('anio').value];
+      const t = tasa / 100;
+      const v = parse($('monto').value);
+      let bruto, ret, liq;
+      if (modo === 'bruto') {
+        bruto = v; ret = Math.round(bruto * t); liq = bruto - ret;
+      } else {
+        liq = v; bruto = Math.round(liq / (1 - t));
+        // ajuste para que bruto - round(bruto*t) == liq exacto
+        while (bruto - Math.round(bruto * t) < liq) bruto++;
+        while (bruto - Math.round(bruto * t) > liq && bruto > 0) bruto--;
+        ret = bruto - liq;
+      }
+      $('rBruto').textContent = fmt(bruto);
+      $('rRet').textContent = fmt(ret);
+      $('rLiq').textContent = fmt(liq);
+      $('rTasa').textContent = pct(tasa);
+      $('nota').textContent = v ? `Boleta ${$('anio').value}: bruto ${fmt(bruto)} − retención ${pct(tasa)} ${fmt(ret)} = líquido ${fmt(liq)}.` : '';
+      return {bruto, ret, liq, tasa};
+    }
+
+    function setModo(m) {
+      modo = m;
+      $('modeBruto').setAttribute('aria-pressed', m === 'bruto');
+      $('modeLiquido').setAttribute('aria-pressed', m === 'liquido');
+      $('montoLabel').textContent = m === 'bruto' ? 'Monto bruto de la boleta' : 'Monto líquido que quieres recibir';
+      calcular();
+    }
+
+    $('monto').addEventListener('input', e => {
+      const n = parse(e.target.value);
+      e.target.value = n ? n.toLocaleString('es-CL') : '';
+      calcular();
+    });
+    $('anio').addEventListener('change', calcular);
+    $('modeBruto').addEventListener('click', () => setModo('bruto'));
+    $('modeLiquido').addEventListener('click', () => setModo('liquido'));
+    $('copiar').addEventListener('click', async () => {
+      const r = calcular();
+      const txt = `Boleta de honorarios ${$('anio').value}\nBruto: ${fmt(r.bruto)}\nRetención ${pct(r.tasa)}: ${fmt(r.ret)}\nLíquido: ${fmt(r.liq)}\n— cozfc.cl/calculadora-honorarios`;
+      try { await navigator.clipboard.writeText(txt); $('copiar').textContent = 'Copiado ✓'; setTimeout(() => $('copiar').textContent = 'Copiar resultado', 1800); } catch (e) { alert(txt); }
+    });
+
+    // Parámetros opcionales: ?monto=1000000&anio=2026&modo=liquido
+    const q = new URLSearchParams(location.search);
+    if (q.get('anio') && TASAS[q.get('anio')]) $('anio').value = q.get('anio');
+    if (q.get('modo') === 'liquido') setModo('liquido');
+    if (q.get('monto')) { $('monto').value = parse(q.get('monto')).toLocaleString('es-CL'); }
+    calcular();
+  </script>
+</body>
+</html>
