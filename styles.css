@@ -53,7 +53,7 @@ body{
 .main-nav{display:flex;gap:10px;align-items:center}
 .chip{
   display:inline-flex;align-items:center;justify-content:center;
-  height:36px;padding:0 14px;border-radius:11px;
+  height:32px;padding:0 12px;border-radius:10px;font-size:14px;
   color:var(--text);text-decoration:none;font-weight:500;
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.28);
@@ -263,7 +263,8 @@ section[id]{scroll-margin-top:80px}
   section[id]{scroll-margin-top:150px}
   .brand img{width:28px;height:28px}
   .brand-text strong{font-size:14px}
-  .main-nav .chip{height:34px;padding:0 12px}
+  .main-nav .chip,.chip-config{height:30px;padding:0 10px;font-size:13px}
+  .header-title{font-size:16px}
   .hero{padding:66px 0 28px}
   .hero-copy h1{font-size:34px}
   .orbit-card{height:460px;padding:44px 16px}
@@ -280,25 +281,31 @@ section[id]{scroll-margin-top:80px}
   .main-nav .chip{white-space:nowrap}
 }
 
-/* Acceso Cliente → portal Consulta IVA (consulta-iva.cozfc.cl): botón sobrio, en la paleta del sitio */
-.hero-cta{margin-top:26px}
+/* Acceso Cliente → portal Consulta IVA (consulta-iva.cozfc.cl): sobrio y del tamaño de las tarjetas del menú */
+.hero-cta{margin-top:22px}
 .btn-acceso{
-  display:inline-flex;align-items:center;justify-content:center;gap:12px;
-  height:50px;padding:0 32px;border-radius:12px;
-  font-weight:600;font-size:13.5px;letter-spacing:1.6px;text-transform:uppercase;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  height:36px;padding:0 18px;border-radius:10px;
+  font-weight:600;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;
   text-decoration:none;color:#fff;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.55);
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.45);
   -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
-  box-shadow:0 12px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.05);
-  transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
 }
-.btn-acceso svg{opacity:.85}
-.btn-acceso:hover{background:#f3f1ec;color:#0b1620;border-color:#f3f1ec;transform:translateY(-1px)}
-.btn-acceso:focus-visible{outline:2px solid rgba(255,255,255,.85);outline-offset:4px}
+.btn-acceso svg{opacity:.85;flex:none}
+.btn-acceso:hover{background:#f3f1ec;color:#0b1620;border-color:#f3f1ec}
+.btn-acceso:focus-visible{outline:2px solid rgba(255,255,255,.85);outline-offset:3px}
 
-/* Barra superior: separación entre navegación y herramientas; acceso al panel al final */
-.nav-sep{width:1px;height:22px;background:rgba(255,255,255,.24);margin:0 8px}
-.chip-panel{gap:8px;border-color:rgba(255,255,255,.42)}
-.chip-panel svg{opacity:.85;flex:none}
-@media (max-width:1120px){.nav-sep{display:none}}
+/* Barra superior: navegación a la derecha; «Configuración» queda en el extremo derecho */
+.main-nav{margin-left:auto}
+.nav-sep{width:1px;height:18px;background:rgba(255,255,255,.24);margin:0 6px}
+.chip-config{gap:7px;border-color:rgba(255,255,255,.42)}
+.chip-config svg{opacity:.85;flex:none}
+@media (max-width:1120px){
+  .nav-sep{display:none}
+  /* Fila 1: nombre del estudio y Configuración a la derecha; fila 2: menú */
+  .chip-config{order:1;margin-left:auto}
+  .main-nav{order:2;flex:1 1 100%;margin-left:0}
+}
