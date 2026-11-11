@@ -196,9 +196,9 @@ section[id]{scroll-margin-top:80px}
 .org-row > .org-card::before{content:"";position:absolute;top:-22px;left:50%;height:22px;border-left:1px solid rgba(255,255,255,.55)}
 .org-connector{height:34px;display:flex;justify-content:center}
 .org-connector span{display:block;width:0;border-left:1px solid rgba(255,255,255,.55)}
-.org-card{position:relative;display:grid;grid-template-columns:132px 1fr;gap:18px;align-items:start;
+.org-card{position:relative;display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start;
   background:rgba(7,12,19,.94);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
-.org-card img{width:132px;height:132px;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.2)}
+.org-card img{width:150px;height:auto;aspect-ratio:1124/1419;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.2)}
 .org-card h3{margin:0 0 2px;font-size:20px}
 .org-card p{margin:0;color:#d6deea;font-size:14.5px}
 .org-role{color:#fff!important;font-weight:600;font-size:15px!important}
@@ -207,8 +207,8 @@ section[id]{scroll-margin-top:80px}
 @media (max-width:860px){
   .org-row{grid-template-columns:1fr;gap:18px}
   .org-row::before,.org-row > .org-card::before{display:none}
-  .org-card{grid-template-columns:96px 1fr}
-  .org-card img{width:96px;height:96px}
+  .org-card{grid-template-columns:110px 1fr}
+  .org-card img{width:110px}
   .hero-stack .hero-copy h1{font-size:32px}
 }
 
