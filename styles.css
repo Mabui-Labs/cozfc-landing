@@ -212,6 +212,14 @@ section[id]{scroll-margin-top:80px}
   .hero-stack .hero-copy h1{font-size:32px}
 }
 
+.team-card{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;background:rgba(7,12,19,.94);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:28px 26px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.member{text-align:center}
+.member img{width:170px;height:auto;margin:0 auto 12px;border-radius:14px;border:1px solid rgba(255,255,255,.2)}
+.member h3{margin:0 0 2px;font-size:20px}
+.member p{margin:0;color:#d6deea;font-size:14.5px}
+.member .org-loc{margin-bottom:10px!important}
+@media (max-width:860px){.team-card{grid-template-columns:1fr;gap:30px}}
+
 /* Contacto */
 .contacto{padding:30px 0 70px}
 .contacto-inner{
