@@ -280,14 +280,25 @@ section[id]{scroll-margin-top:80px}
   .main-nav .chip{white-space:nowrap}
 }
 
-/* Acceso Cliente → portal Consulta IVA (consulta-iva.cozfc.cl) */
-.hero-cta{margin-top:22px}
+/* Acceso Cliente → portal Consulta IVA (consulta-iva.cozfc.cl): botón sobrio, en la paleta del sitio */
+.hero-cta{margin-top:26px}
 .btn-acceso{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  height:50px;padding:0 28px;border-radius:12px;
-  font-weight:600;font-size:16px;letter-spacing:.2px;text-decoration:none;color:#fff;
-  background:rgba(46,103,255,.24);border:1px solid rgba(140,175,255,.7);
-  box-shadow:0 8px 24px rgba(0,0,0,.35);transition:.2s ease;
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  height:50px;padding:0 32px;border-radius:12px;
+  font-weight:600;font-size:13.5px;letter-spacing:1.6px;text-transform:uppercase;
+  text-decoration:none;color:#fff;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.55);
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+  box-shadow:0 12px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.05);
+  transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease;
 }
-.btn-acceso:hover{background:rgba(46,103,255,.4);border-color:rgba(185,208,255,.95)}
-.btn-acceso:focus-visible{outline:3px solid rgba(140,175,255,.85);outline-offset:3px}
+.btn-acceso svg{opacity:.85}
+.btn-acceso:hover{background:#f3f1ec;color:#0b1620;border-color:#f3f1ec;transform:translateY(-1px)}
+.btn-acceso:focus-visible{outline:2px solid rgba(255,255,255,.85);outline-offset:4px}
+
+/* Barra superior: separación entre navegación y herramientas; acceso al panel al final */
+.nav-sep{width:1px;height:22px;background:rgba(255,255,255,.24);margin:0 8px}
+.chip-panel{gap:8px;border-color:rgba(255,255,255,.42)}
+.chip-panel svg{opacity:.85;flex:none}
+@media (max-width:1120px){.nav-sep{display:none}}
