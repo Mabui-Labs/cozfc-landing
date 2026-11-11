@@ -301,11 +301,13 @@ section[id]{scroll-margin-top:80px}
 /* Barra superior: navegación a la derecha; «Configuración» queda en el extremo derecho */
 .main-nav{margin-left:auto}
 .nav-sep{width:1px;height:18px;background:rgba(255,255,255,.24);margin:0 6px}
-.chip-config{gap:7px;border-color:rgba(255,255,255,.42)}
-.chip-config svg{opacity:.85;flex:none}
+.chip-config{width:32px;padding:0;border-color:rgba(255,255,255,.42)}
+.chip-config svg{opacity:.85;flex:none;transition:transform .4s ease}
+.chip-config:hover svg{transform:rotate(45deg)}
 @media (max-width:1120px){
   .nav-sep{display:none}
   /* Fila 1: nombre del estudio y Configuración a la derecha; fila 2: menú */
   .chip-config{order:1;margin-left:auto}
   .main-nav{order:2;flex:1 1 100%;margin-left:0}
 }
+@media (max-width:640px){.chip-config{width:30px}}
