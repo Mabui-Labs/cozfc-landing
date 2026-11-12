@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calculadora de Boleta de Honorarios 2026 — Enrique Castillo & Asociados</title>
-  <meta name="description" content="Calcula el monto bruto, la retención y el líquido de una boleta de honorarios en Chile con la tasa vigente (15,25% en 2026, Ley 21.133). Bruto a líquido y líquido a bruto.">
+  <title>Calculadora de Boleta de Honorarios — Enrique Castillo & Asociados</title>
+  <meta name="description" content="Calcula el monto bruto, la retención y el líquido de una boleta de honorarios en Chile con la tasa vigente según la Ley 21.133. Bruto a líquido y líquido a bruto.">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -72,7 +72,7 @@
     <section class="calc">
       <div class="container">
         <h1>Calculadora de Boleta de Honorarios</h1>
-        <p class="sub">Bruto, retención y líquido con la tasa vigente según la Ley 21.133. Año 2026: <strong>retención 15,25%</strong>.</p>
+        <p class="sub">Bruto, retención y líquido con la tasa vigente según la Ley 21.133. Año <span id="subAnio">2026</span>: <strong>retención <span id="subTasa">15,25%</span></strong>.</p>
 
         <div class="calc-grid">
           <div class="panel">
@@ -129,7 +129,14 @@
   <script>
     // Tasas de retención Ley 21.133 (Art. 74 N°2 LIR). 2028 en adelante: 17% permanente.
     const TASAS = {2019:10, 2020:10.75, 2021:11.5, 2022:12.25, 2023:13, 2024:13.75, 2025:14.5, 2026:15.25, 2027:16, 2028:17};
-    const ANIO_ACTUAL = 2026;
+    // Año en curso según la hora de Chile (cambia solo el 1 de enero). Desde 2028 se aplica la tasa de 2028 (17%).
+    function anioChile() {
+      try { return Number(new Intl.DateTimeFormat('en-US', {timeZone: 'America/Santiago', year: 'numeric'}).format(new Date())); }
+      catch (e) { return 0; }
+    }
+    const ANIOS = Object.keys(TASAS).map(Number);
+    const ANIO_HOY = Math.max(anioChile() || new Date().getFullYear(), Math.min(...ANIOS));
+    const ANIO_ACTUAL = Math.min(ANIO_HOY, Math.max(...ANIOS));
     let modo = 'bruto';
 
     const $ = id => document.getElementById(id);
@@ -139,6 +146,13 @@
     const fmt = n => '$' + Math.round(n).toLocaleString('es-CL');
     const pct = t => t.toLocaleString('es-CL', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '%';
     const parse = s => Number(String(s).replace(/[^\d]/g, '')) || 0;
+    const pctCorto = t => t.toLocaleString('es-CL', {maximumFractionDigits: 2}) + '%';
+
+    // Textos con el año en curso y su tasa
+    $('subAnio').textContent = ANIO_HOY;
+    $('subTasa').textContent = pctCorto(TASAS[ANIO_ACTUAL]);
+    document.title = `Calculadora de Boleta de Honorarios ${ANIO_HOY} — Enrique Castillo & Asociados`;
+    document.querySelector('meta[name="description"]').content = `Calcula el monto bruto, la retención y el líquido de una boleta de honorarios en Chile con la tasa vigente (${pctCorto(TASAS[ANIO_ACTUAL])} en ${ANIO_HOY}, Ley 21.133). Bruto a líquido y líquido a bruto.`;
 
     // Selector de año
     Object.keys(TASAS).sort((a,b)=>b-a).forEach(y => {
