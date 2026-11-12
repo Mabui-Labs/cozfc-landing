@@ -189,7 +189,7 @@ body{
 section[id]{scroll-margin-top:80px}
 .nosotros{padding:48px 0 10px}
 .nosotros-page{padding:30px 0 40px}
-.nosotros-page h1{font-family:"Playfair Display",serif;font-size:40px;margin:0 0 6px}
+.nosotros-page h1{font-family:"Playfair Display",serif;font-size:40px;line-height:1.15;margin:0 0 20px;text-shadow:0 2px 16px rgba(0,0,0,.55)}
 .hero-nosotros{padding:40px 0 10px}
 .nosotros .sub{background:rgba(7,12,19,.7);display:inline-block;padding:8px 12px;border-radius:10px}
 .nosotros h2{font-family:"Playfair Display",serif;font-size:40px;margin:0 0 6px}
@@ -217,15 +217,16 @@ section[id]{scroll-margin-top:80px}
   .hero-stack .hero-copy h1{font-size:32px}
 }
 
-.team-card{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;background:rgba(7,12,19,.94);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:28px 26px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
-.member{text-align:left}
+/* Equipo: una tarjeta por integrante, con el mismo estilo de tarjeta del sitio */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.member{text-align:left;background:rgba(7,12,19,.94);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:26px 24px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
 .member img{width:170px;height:auto;margin:0 0 12px;border-radius:14px;border:1px solid rgba(255,255,255,.2)}
 .member h3{margin:0 0 2px;font-size:20px}
-.member p{margin:0;color:#d6deea;font-size:14.5px;text-align:justify}
+.member p{margin:0;color:#d6deea;font-size:14.5px;text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .member .org-role,.member .org-loc{text-align:left}
 .member .org-loc{margin-bottom:10px!important}
-.team-intro{margin:0 0 18px;background:rgba(7,12,19,.94);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:18px 26px;color:#d6deea;font-size:16px;line-height:1.6;text-align:left}
-@media (max-width:860px){.team-card{grid-template-columns:1fr;gap:30px;padding:22px 18px}.team-intro{text-align:left;padding:16px 18px;font-size:15px}.member img{width:150px}}
+@media (max-width:1000px){.team-grid{grid-template-columns:1fr 1fr}.team-grid > .member:nth-child(3){grid-column:1 / -1;justify-self:center;width:calc(50% - 11px)}}
+@media (max-width:680px){.team-grid{grid-template-columns:1fr;gap:18px}.team-grid > .member:nth-child(3){grid-column:auto;justify-self:stretch;width:auto}.member{padding:22px 18px}.member img{width:150px}}
 
 /* Contacto */
 .contacto{padding:30px 0 70px}
