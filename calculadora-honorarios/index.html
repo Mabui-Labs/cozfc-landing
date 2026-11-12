@@ -40,11 +40,9 @@
     .res{transition:background .2s ease,border-color .2s ease}
     .res.total{background:rgba(46,103,255,.18);border-color:rgba(46,103,255,.45)}
     .note{color:var(--muted);font-size:14px;margin-top:16px}
-    .tabla{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
-    .tabla th,.tabla td{padding:7px 8px;border-bottom:1px solid rgba(255,255,255,.1);text-align:left}
-    .tabla th{color:var(--muted);font-weight:500}
-    .tabla tr.now td{font-weight:600;color:#fff}
     .faq h3{font-size:16px;margin:16px 0 4px}
+    .faq h3:first-child{margin-top:0}
+    .faq .note{margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);font-size:13px}
     .faq p{color:var(--muted);margin:0;font-size:14px}
     .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
     .actions .btn-chip{font:inherit;font-weight:600;cursor:pointer}
@@ -101,9 +99,6 @@
           </div>
 
           <div class="panel faq">
-            <h3 style="margin-top:0">Tasas de retención por año (Ley 21.133)</h3>
-            <table class="tabla" id="tablaTasas"><thead><tr><th>Año</th><th>Retención</th><th>Factor líquido</th></tr></thead><tbody></tbody></table>
-
             <h3>¿Quién retiene y paga al SII?</h3>
             <p>Si la boleta se emite a una empresa o institución (contribuyente de 1ª categoría obligado a retener), ella descuenta la retención y la declara en su F29. Si se emite a una persona natural sin obligación de retener, el propio profesional debe enterar el porcentaje como PPM en su F29 del mes siguiente.</p>
 
@@ -144,15 +139,6 @@
       o.value = y; o.textContent = y + ' — ' + pct(TASAS[y]) + (y == 2028 ? ' (y siguientes)' : '');
       if (Number(y) === ANIO_ACTUAL) o.selected = true;
       $('anio').appendChild(o);
-    });
-
-    // Tabla
-    const tb = $('tablaTasas').querySelector('tbody');
-    Object.keys(TASAS).sort((a,b)=>b-a).forEach(y => {
-      const tr = document.createElement('tr');
-      if (Number(y) === ANIO_ACTUAL) tr.className = 'now';
-      tr.innerHTML = `<td>${y}${y == 2028 ? ' en adelante' : ''}</td><td>${pct(TASAS[y])}</td><td>${(1 - TASAS[y]/100).toLocaleString('es-CL',{minimumFractionDigits:4,maximumFractionDigits:4})}</td>`;
-      tb.appendChild(tr);
     });
 
     function calcular() {
