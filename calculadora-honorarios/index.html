@@ -9,18 +9,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/Coz_Favicon.png" type="image/png">
-  <link rel="stylesheet" href="../styles.css?v=20261111i" />
+  <link rel="stylesheet" href="../styles.css?v=20261112a" />
   <style>
     body{background-image:url('../assets/Fondo_paginaweb1.jpg')}
     .main-nav{flex-wrap:wrap}.main-nav .chip{white-space:nowrap}
     .calc{padding:60px 0 50px}
-    .calc h1{font-family:"Playfair Display",serif;font-size:40px;margin:0 0 6px}
-    .calc .sub{color:var(--muted);margin:0 0 22px}
+    .calc h1{font-family:"Playfair Display",serif;font-size:40px;line-height:1.15;margin:0 0 10px;text-shadow:0 2px 16px rgba(0,0,0,.55)}
+    .calc .sub{display:inline-block;margin:0 0 22px;padding:8px 14px;border-radius:10px;color:#d6deea;font-size:15.5px;
+      background:rgba(7,12,19,.78);border:1px solid rgba(255,255,255,.10);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+    .calc .sub strong{color:#fff;font-weight:600}
     .calc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
     .panel{background:linear-gradient(180deg, rgba(12,20,30,.78), rgba(12,20,30,.58));border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px 22px}
-    .seg{display:inline-flex;border:1px solid rgba(255,255,255,.28);border-radius:11px;overflow:hidden;margin-bottom:18px}
-    .seg button{all:unset;cursor:pointer;padding:9px 16px;font-weight:500;color:var(--text);background:rgba(255,255,255,.06)}
-    .seg button[aria-pressed="true"]{background:rgba(255,255,255,.18);font-weight:600}
+    .seg{display:inline-flex;gap:4px;padding:4px;border:1px solid rgba(255,255,255,.22);border-radius:13px;background:rgba(7,12,19,.6);margin-bottom:18px}
+    .seg button{all:unset;box-sizing:border-box;cursor:pointer;padding:9px 16px;border-radius:9px;font-weight:500;font-size:15px;text-align:center;
+      color:var(--muted);transition:background .2s ease,color .2s ease,box-shadow .2s ease}
+    .seg button:hover{color:var(--text);background:rgba(255,255,255,.08)}
+    .seg button[aria-pressed="true"]{background:#f3f1ec;color:#0b1620;font-weight:600;box-shadow:0 2px 12px rgba(0,0,0,.35)}
+    .seg button:focus-visible{outline:2px solid rgba(255,255,255,.85);outline-offset:2px}
     label{display:block;color:var(--muted);font-size:14px;margin:12px 0 6px}
     .field{display:flex;align-items:center;gap:8px}
     .field span{color:var(--muted);font-weight:600}
@@ -32,6 +37,7 @@
     .res{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)}
     .res small{color:var(--muted);display:block;font-size:13px}
     .res strong{font-size:24px;white-space:nowrap}
+    .res{transition:background .2s ease,border-color .2s ease}
     .res.total{background:rgba(46,103,255,.18);border-color:rgba(46,103,255,.45)}
     .note{color:var(--muted);font-size:14px;margin-top:16px}
     .tabla{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
@@ -41,18 +47,24 @@
     .faq h3{font-size:16px;margin:16px 0 4px}
     .faq p{color:var(--muted);margin:0;font-size:14px}
     .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .actions .btn-chip{font:inherit;font-weight:600;cursor:pointer}
     @media (max-width:860px){.calc-grid{grid-template-columns:1fr}.calc h1{font-size:30px}}
+    @media (max-width:520px){.seg{display:flex}.seg button{flex:1 1 0;padding:9px 8px;font-size:14px}}
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <p class="header-title">Enrique Castillo & Asociados</p>
-      <nav class="main-nav">
-        <a class="chip" href="/">Inicio</a>
-        <a class="chip" href="/#tramites">Trámites Online</a>
+      <nav class="main-nav" aria-label="Menú principal">
         <a class="chip" href="/#contacto">Contacto</a>
+        <a class="chip" href="/">Inicio</a>
+        <a class="chip" href="/nosotros/">Nosotros</a>
+        <a class="chip" href="/#tramites">Trámites Online</a>
       </nav>
+      <a class="chip chip-config" href="https://consulta-iva.cozfc.cl/panel" rel="noopener" aria-label="Configuración" title="Configuración">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </a>
     </div>
   </header>
 
@@ -60,7 +72,7 @@
     <section class="calc">
       <div class="container">
         <h1>Calculadora de Boleta de Honorarios</h1>
-        <p class="sub">Bruto, retención y líquido con la tasa vigente según la Ley 21.133. Año 2026: retención 15,25%.</p>
+        <p class="sub">Bruto, retención y líquido con la tasa vigente según la Ley 21.133. Año 2026: <strong>retención 15,25%</strong>.</p>
 
         <div class="calc-grid">
           <div class="panel">
@@ -76,9 +88,9 @@
             <select id="anio"></select>
 
             <div class="results" id="results">
-              <div class="res"><div>Monto bruto<small>Total honorarios de la boleta</small></div><strong id="rBruto">$0</strong></div>
+              <div class="res" id="cBruto"><div>Monto bruto<small id="sBruto">Total honorarios de la boleta</small></div><strong id="rBruto">$0</strong></div>
               <div class="res"><div>Retención <span id="rTasa">15,25%</span><small>Impuesto retenido (Art. 74 N°2 LIR)</small></div><strong id="rRet">$0</strong></div>
-              <div class="res total"><div>Monto líquido<small>Lo que recibe el profesional</small></div><strong id="rLiq">$0</strong></div>
+              <div class="res total" id="cLiq"><div>Monto líquido<small>Lo que recibe el profesional</small></div><strong id="rLiq">$0</strong></div>
             </div>
 
             <div class="actions">
@@ -170,6 +182,10 @@
       $('modeBruto').setAttribute('aria-pressed', m === 'bruto');
       $('modeLiquido').setAttribute('aria-pressed', m === 'liquido');
       $('montoLabel').textContent = m === 'bruto' ? 'Monto bruto de la boleta' : 'Monto líquido que quieres recibir';
+      // Se destaca el resultado que se busca: líquido (desde bruto) o bruto a emitir (desde líquido)
+      $('cLiq').classList.toggle('total', m === 'bruto');
+      $('cBruto').classList.toggle('total', m === 'liquido');
+      $('sBruto').textContent = m === 'bruto' ? 'Total honorarios de la boleta' : 'Emite la boleta por este monto';
       calcular();
     }
 

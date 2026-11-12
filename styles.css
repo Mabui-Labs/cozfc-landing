@@ -108,8 +108,10 @@ body{
 
 /* Ecosistema */
 .ecosystem{padding:40px 0 20px}
-.ecosystem h2{font-family:"Playfair Display",serif;font-size:40px;margin:0 0 6px}
-.ecosystem .sub{color:var(--muted);margin:0 0 18px}
+.ecosystem h2{font-family:"Playfair Display",serif;font-size:40px;line-height:1.15;margin:0 0 10px;text-shadow:0 2px 16px rgba(0,0,0,.55)}
+/* Bajada legible sobre la foto: franja oscura translúcida, igual que en «Nosotros» y la calculadora */
+.ecosystem .sub{display:inline-block;margin:0 0 18px;padding:8px 14px;border-radius:10px;color:#d6deea;font-size:15.5px;
+  background:rgba(7,12,19,.78);border:1px solid rgba(255,255,255,.10);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
 
 .orbit-card{
   position:relative;border-radius:20px;
