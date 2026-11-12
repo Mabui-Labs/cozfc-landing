@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="../assets/Coz_Favicon.png" type="image/png">
-  <link rel="stylesheet" href="../styles.css?v=20261112b" />
+  <link rel="stylesheet" href="../styles.css?v=20261112c" />
   <style>
     body{background-image:url('../assets/Fondo_paginaweb1.jpg')}
     .main-nav{flex-wrap:wrap}.main-nav .chip{white-space:nowrap}
@@ -46,6 +46,8 @@
     .faq p{color:var(--muted);margin:0;font-size:14px}
     .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
     .actions .btn-chip{font:inherit;font-weight:600;cursor:pointer}
+    .nota-correo{color:var(--muted);font-size:13px;margin:8px 0 0}
+    .nota-correo a{color:var(--text)}
     @media (max-width:860px){.calc-grid{grid-template-columns:1fr}.calc h1{font-size:30px}}
     @media (max-width:520px){.seg{display:flex}.seg button{flex:1 1 0;padding:9px 8px;font-size:14px}}
   </style>
@@ -93,8 +95,9 @@
 
             <div class="actions">
               <button type="button" class="btn-chip" id="copiar">Copiar resultado</button>
-              <a class="btn-chip" href="/#contacto">¿Dudas? Contáctanos</a>
+              <a class="btn-chip" id="consultar" href="mailto:ecastillo@cozfc.cl" title="Abre un correo para escribirnos tu consulta">¿Dudas? Contáctanos</a>
             </div>
+            <p class="nota-correo" id="notaCorreo" hidden>Se abre Gmail con tu consulta. ¿Usas otro correo? Escríbenos a <a href="mailto:ecastillo@cozfc.cl">ecastillo@cozfc.cl</a></p>
             <p class="note" id="nota"></p>
           </div>
 
@@ -129,6 +132,9 @@
     let modo = 'bruto';
 
     const $ = id => document.getElementById(id);
+    // Consulta por correo: Gmail en computador; app de correo en celular/tablet
+    const CORREO = 'ecastillo@cozfc.cl';
+    const MOVIL = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
     const fmt = n => '$' + Math.round(n).toLocaleString('es-CL');
     const pct = t => t.toLocaleString('es-CL', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '%';
     const parse = s => Number(String(s).replace(/[^\d]/g, '')) || 0;
@@ -160,7 +166,23 @@
       $('rLiq').textContent = fmt(liq);
       $('rTasa').textContent = pct(tasa);
       $('nota').textContent = v ? `Boleta ${$('anio').value}: bruto ${fmt(bruto)} − retención ${pct(tasa)} ${fmt(ret)} = líquido ${fmt(liq)}.` : '';
+      $('consultar').href = enlaceConsulta(v ? $('nota').textContent : '');
       return {bruto, ret, liq, tasa};
+    }
+
+    function enlaceConsulta(calculo) {
+      const asunto = 'Consulta boleta de honorarios';
+      const cuerpo = 'Hola, tengo una consulta sobre una boleta de honorarios.\n\n'
+        + (calculo ? 'Cálculo de referencia: ' + calculo + '\n\n' : '')
+        + 'Mi consulta:\n\n';
+      return MOVIL
+        ? `mailto:${CORREO}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`
+        : `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CORREO)}&su=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+    }
+    if (!MOVIL) {
+      $('consultar').target = '_blank';
+      $('consultar').rel = 'noopener';
+      $('notaCorreo').hidden = false;
     }
 
     function setModo(m) {
