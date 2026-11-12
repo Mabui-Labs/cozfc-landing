@@ -225,10 +225,11 @@ section[id]{scroll-margin-top:80px}
 .member p{margin:0;color:#d6deea;font-size:14.5px;line-height:1.6;text-align:center;text-wrap:pretty}
 .member .org-role,.member .org-loc{text-align:center}
 .member .org-loc{margin-bottom:6px!important}
-/* Títulos profesionales: hasta tres líneas, con el separador alineado entre tarjetas */
-.member .member-cred{display:flex;flex-direction:column;justify-content:center;min-height:calc(3 * 1.5em + 12px);
+/* Títulos profesionales: hasta dos líneas, con el separador alineado entre tarjetas */
+.member .member-cred{display:flex;flex-direction:column;justify-content:center;min-height:calc(2 * 1.5em + 12px);
   color:#c9d3e0;font-size:13px;line-height:1.5;letter-spacing:.2px;text-align:center;text-align-last:center;
   margin:0 0 12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.12)}
+.member .member-cred .cred-nota{font-size:11.5px;color:#9fb0c4;letter-spacing:.3px;margin-top:1px}
 @media (max-width:1000px){.team-grid{grid-template-columns:1fr 1fr}.team-grid > .member:nth-child(3){grid-column:1 / -1;justify-self:center;width:calc(50% - 11px)}}
 @media (max-width:680px){.team-grid{grid-template-columns:1fr;gap:18px}.team-grid > .member:nth-child(3){grid-column:auto;justify-self:stretch;width:auto}.member{padding:22px 18px}.member img{width:150px}}
 
