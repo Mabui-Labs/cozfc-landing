@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="icon" href="assets/Coz_Favicon.png" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=20261112f" />
+  <link rel="stylesheet" href="styles.css?v=20261112g" />
 </head>
 <body>
 
@@ -205,9 +205,10 @@
 
   <footer class="site-footer">
     <div class="container">
-      <span>®Adscrito al Colegio de Contadores de Chile.</span>
-      <span>© 2025 Mabui Webhook.</span>
+      <span class="pie-firma">© <span class="pie-anio">2026</span> Enrique Castillo &amp; Asociados</span>
+      <span class="pie-nota">Adscrito al Colegio de Contadores de Chile</span>
     </div>
+    <script>document.querySelectorAll('.pie-anio').forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
   </footer>
 
   <script src="script.js"></script>

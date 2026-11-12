@@ -175,9 +175,10 @@
 
   <footer class="site-footer">
     <div class="container">
-      <span>®Adscrito al Colegio de Contadores de Chile.</span>
-      <span>© 2025 Mabui Webhook.</span>
+      <span class="pie-firma">© <span class="pie-anio">2026</span> Enrique Castillo &amp; Asociados</span>
+      <span class="pie-nota">Adscrito al Colegio de Contadores de Chile</span>
     </div>
+    <script>document.querySelectorAll('.pie-anio').forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
   </footer>
 
   <script src="catalogo.js"></script>
